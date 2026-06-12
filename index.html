@@ -680,6 +680,35 @@
       font-weight: 600;
     }
 
+    /* ── Linux Commands ── */
+    .cs-linux-tier {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cs-linux-cmd {
+      background: #0d1117;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: all 0.2s;
+    }
+
+    .cs-linux-cmd:hover {
+      border-color: #58a6ff;
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1);
+    }
+
+    .cs-linux-name {
+      font-size: 0.95rem;
+      color: #e6edf3;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
     .cs-hidden {
       display: none;
     }
@@ -827,6 +856,9 @@
           <a class="cs-nav-item coming-soon">pfSense soon</a>
           <a class="cs-nav-item coming-soon">VLANs &amp; Subnetting soon</a>
           <a class="cs-nav-item coming-soon">DNS &amp; DHCP soon</a>
+          <a class="cs-nav-item" onclick="switchContent('linux-network', null)">🐧 Linux Network Troubleshooting</a>
+          <a class="cs-nav-item coming-soon">🪟 Windows Network Troubleshooting soon</a>
+          <a class="cs-nav-item coming-soon">🍎 MAC soon</a>
         </div>
       </div>
 
@@ -835,10 +867,10 @@
           🐧 Linux <span class="chevron">▶</span>
         </div>
         <div class="cs-nav-items">
-          <a href="#" class="cs-nav-item coming-soon">Common Commands</a>
-          <a href="#" class="cs-nav-item coming-soon">Bash Scripting</a>
-          <a href="#" class="cs-nav-item coming-soon">Permissions &amp; Users</a>
-          <a href="#" class="cs-nav-item coming-soon">Systemd &amp; Services</a>
+          <a class="cs-nav-item" onclick="switchContent('linux', null)">Troubleshooting Commands</a>
+          <a class="cs-nav-item coming-soon">Bash Scripting soon</a>
+          <a class="cs-nav-item coming-soon">Permissions &amp; Users soon</a>
+          <a class="cs-nav-item coming-soon">Systemd &amp; Services soon</a>
         </div>
       </div>
 
@@ -1788,6 +1820,343 @@ exit</pre>
 
     </div>
 
+    <!-- LINUX NETWORK TROUBLESHOOTING CONTENT -->
+    <div id="linux-network-content" class="cs-content-section cs-hidden">
+
+      <div class="cs-page-header">
+        <p class="breadcrumb">macnoon188://cheatsheet / networking / linux-network</p>
+        <h1>🐧 Linux Network Troubleshooting</h1>
+        <p>Comprehensive network diagnostics and management. Organized by: Ports, Internet/DNS, Package Management, and Logs.</p>
+      </div>
+
+      <div class="cs-device-toggle">
+        <label>Tier:</label>
+        <button class="cs-tier-btn active" onclick="switchLinuxNetworkTier('tier1')">🔴 Tier 1: Ports</button>
+        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier2')">🟡 Tier 2: Internet/DNS</button>
+        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier3')">🔵 Tier 3: Package Management</button>
+        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier4')">🟢 Tier 4: Logs</button>
+      </div>
+
+      <!-- Linux Network Tier 1: Ports -->
+      <div id="linux-net-tier1" class="cs-linux-tier">
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Find Programs Listening on Ports</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -plnt</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Find Programs Listening on Ports (ss)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ss -plnt</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Find Programs Listening on Specific Port</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>lsof -i -P | grep <span class="cs-placeholder">&lt;port&gt;</span></pre></div>
+        </div>
+      </div>
+
+      <!-- Linux Network Tier 2: Internet/DNS -->
+      <div id="linux-net-tier2" class="cs-linux-tier" style="display: none;">
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Show Domain IP Address (dig)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig +short example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Show Domain IP Address (nslookup)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Check DNS Using Specific Nameserver - Google (8.8.8.8)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig @8.8.8.8 example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Check DNS Using Specific Nameserver - Cloudflare (1.1.1.1)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup example.com 1.1.1.1</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Find Host Provider</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>whois <span class="cs-placeholder">&lt;ip_address&gt;</span> | grep -i "orgname\|netname"</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Curl Headers with Redirect</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>curl --head --location "https://example.com"</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Test if Host is Reachable (ping)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Show Route Taken to Host (traceroute)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>traceroute example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Show Route with Real-Time Updates (mtr)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>mtr example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">List Details of Network Interfaces</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ip address</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Check Local DNS Settings (/etc/hosts)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/hosts</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Check Local DNS Settings (/etc/resolv.conf)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/resolv.conf</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Check systemd Resolver Status</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>systemd-resolve --status</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Capture Traffic to/from Host</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo tcpdump host www.example.com</pre></div>
+        </div>
+      </div>
+
+      <!-- Linux Network Tier 3: Package Management -->
+      <div id="linux-net-tier3" class="cs-linux-tier" style="display: none;">
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">List Packages (Debian/Ubuntu)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dpkg -l</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">List Installed Packages (apt)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt list --installed</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Find Installed Package (dpkg)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dpkg -l | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Find Installed Package (apt)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt list --installed | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Install Package (dpkg)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dpkg -i <span class="cs-placeholder">&lt;package_name&gt;</span>.deb</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Install Package (apt-get)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt-get install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Install Package (apt)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Install Package (CentOS/RedHat - yum)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>yum install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Install Package (RHEL/CentOS 8+ - dnf)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dnf install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Install Package (rpm)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>rpm -ivh <span class="cs-placeholder">&lt;package_name&gt;</span>.rpm</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Find Installed Package (CentOS/RedHat)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>rpm -qa | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+        </div>
+      </div>
+
+      <!-- Linux Network Tier 4: Logs -->
+      <div id="linux-net-tier4" class="cs-linux-tier" style="display: none;">
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Print Last Lines in Log File</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>tail -n <span class="cs-placeholder">&lt;n&gt;</span> /path/to/log/file</pre></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LINUX TROUBLESHOOTING CONTENT -->
+    <div id="linux-content" class="cs-content-section cs-hidden">
+
+      <div class="cs-page-header">
+        <p class="breadcrumb">macnoon188://cheatsheet / linux / troubleshooting</p>
+        <h1>🐧 Linux Troubleshooting Commands</h1>
+        <p>Essential diagnostic and remediation commands for system health, hardware, networking, and process management. Organized by priority tier.</p>
+      </div>
+
+      <div class="cs-device-toggle">
+        <label>Tier:</label>
+        <button class="cs-tier-btn active" onclick="switchLinuxTier('tier1')">🔴 Tier 1: Critical System Health</button>
+        <button class="cs-tier-btn" onclick="switchLinuxTier('tier2')">🟡 Tier 2: Hardware &amp; Resources</button>
+        <button class="cs-tier-btn" onclick="switchLinuxTier('tier3')">🔵 Tier 3: Network &amp; Connectivity</button>
+        <button class="cs-tier-btn" onclick="switchLinuxTier('tier4')">🟢 Tier 4: Processes &amp; Services</button>
+      </div>
+
+      <!-- Linux Tier 1 -->
+      <div id="linux-tier1" class="cs-linux-tier">
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Check System Uptime &amp; Logged-in Users</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>uptime && who</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">View Recent System Events</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>last -x | head</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Quick Kernel &amp; Hardware Overview</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ip a ; df -h</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Read Recent Boot &amp; Hardware Errors (dmesg)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dmesg -T | grep -iE 'error|fail'</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Follow Kernel Messages in Real-Time</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dmesg -w</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-critical">
+          <div class="cs-linux-name">Inspect systemd Journal for Service Start Failures</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>journalctl -xe</pre></div>
+        </div>
+      </div>
+
+      <!-- Linux Tier 2 -->
+      <div id="linux-tier2" class="cs-linux-tier" style="display: none;">
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Real-Time Interactive Resource Dashboard</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>htop</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Check System Memory Pressure &amp; Swap</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>free -m -h</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">View Detailed System &amp; Process Metrics (wait times)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>vmstat 2</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Check Filesystem Mount Points &amp; Disk Space</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>df -h</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">Find Large Folders Consuming Most Space</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>du -sh /* | sort -h</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">List All Block Devices &amp; Mount Points</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>lsblk -f</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-high">
+          <div class="cs-linux-name">View Physical Disk Health (SMART) Data</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo smartctl -a /dev/sda</pre></div>
+        </div>
+      </div>
+
+      <!-- Linux Tier 3 -->
+      <div id="linux-tier3" class="cs-linux-tier" style="display: none;">
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Display All Configured Interfaces &amp; IP Addresses</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ip -br a</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Find Programs Listening on Ports (netstat)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -plnt</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Find Programs Listening on Ports (ss)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ss -plnt</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Check Specific Port Usage (lsof)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>lsof -i -P | grep <span class="cs-placeholder">&lt;port&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Show Domain IP Address (dig)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig +short example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Show Domain IP Address (nslookup)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Check DNS Using Specific Nameserver</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig @8.8.8.8 example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Find Host Provider (whois)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>whois <span class="cs-placeholder">&lt;ip_address&gt;</span> | grep -i "orgname\|netname"</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Curl Headers with Redirect</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>curl --head --location "https://example.com"</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Test if Host is Reachable (ping)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Show Route Taken to Host (traceroute)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>traceroute example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Show Route with Real-Time Updates (mtr)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>mtr example.com</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Check Local DNS Settings (/etc/hosts)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/hosts</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Check Local DNS Settings (/etc/resolv.conf)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/resolv.conf</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Check systemd Resolver Status</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>systemd-resolve --status</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-medium">
+          <div class="cs-linux-name">Capture Network Traffic to/from Host</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo tcpdump host www.example.com</pre></div>
+        </div>
+      </div>
+
+      <!-- Linux Tier 4 -->
+      <div id="linux-tier4" class="cs-linux-tier" style="display: none;">
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Identify Exact Process ID (PID) of Runaway Process</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ps aux | grep <span class="cs-placeholder">&lt;process_name&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Gracefully Kill a Problematic Process</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>kill <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Force Kill a Stubborn Process</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>kill -9 <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Stream Real-Time Logs for Specific Service</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>journalctl -u <span class="cs-placeholder">&lt;service_name&gt;</span> -f</pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">See Files &amp; Ports Opened by Process</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo lsof -p <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Trace System Calls (Debug Hanging/Crashing Apps)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>strace -p <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Advanced strace with Timestamps &amp; Details</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>strace -tt -T -f -y -yy -s 1024 -p <span class="cs-placeholder">&lt;pid&gt;</span></pre></div>
+        </div>
+        <div class="cs-linux-cmd cs-severity-low">
+          <div class="cs-linux-name">Print Last Lines in Log File</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>tail -n <span class="cs-placeholder">&lt;n&gt;</span> /path/to/log/file</pre></div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
 <footer>
   <p>&copy; 2026 Mark Andrew Wanjau | Built by Makbuilt Solutions</p>
 </footer>
@@ -1846,13 +2215,15 @@ exit</pre>
     el.nextElementSibling.classList.toggle('open');
   }
 
-  // ── Switch Content (Cisco vs Windows vs Event Logs vs PowerShell vs Active Directory) ──
+  // ── Switch Content (Cisco vs Windows vs Event Logs vs PowerShell vs Active Directory vs Linux) ──
   function switchContent(category, tier) {
     const ciscoContent = document.getElementById('cisco-content');
     const windowsContent = document.getElementById('windows-content');
     const eventLogsContent = document.getElementById('event-logs-content');
     const powershellContent = document.getElementById('powershell-content');
     const activeDirectoryContent = document.getElementById('active-directory-content');
+    const linuxContent = document.getElementById('linux-content');
+    const linuxNetworkContent = document.getElementById('linux-network-content');
 
     // Hide all
     ciscoContent.classList.add('cs-hidden');
@@ -1860,6 +2231,8 @@ exit</pre>
     eventLogsContent.classList.add('cs-hidden');
     powershellContent.classList.add('cs-hidden');
     activeDirectoryContent.classList.add('cs-hidden');
+    linuxContent.classList.add('cs-hidden');
+    linuxNetworkContent.classList.add('cs-hidden');
 
     // Show selected
     if (category === 'cisco') {
@@ -1876,6 +2249,12 @@ exit</pre>
     } else if (category === 'active-directory') {
       activeDirectoryContent.classList.remove('cs-hidden');
       switchADTier('tier1');
+    } else if (category === 'linux') {
+      linuxContent.classList.remove('cs-hidden');
+      switchLinuxTier('tier1');
+    } else if (category === 'linux-network') {
+      linuxNetworkContent.classList.remove('cs-hidden');
+      switchLinuxNetworkTier('tier1');
     }
   }
 
@@ -1965,6 +2344,66 @@ exit</pre>
       buttons[2].classList.add('active');
     } else if (tier === 'tier4') {
       document.getElementById('ad-tier4').style.display = 'block';
+      buttons[3].classList.add('active');
+    }
+  }
+
+  // ── Switch Linux Tier ──
+  function switchLinuxTier(tier) {
+    const tiers = ['linux-tier1', 'linux-tier2', 'linux-tier3', 'linux-tier4'];
+    const buttons = document.querySelectorAll('#linux-content .cs-tier-btn');
+    
+    // Hide all tiers
+    tiers.forEach(tierId => {
+      const el = document.getElementById(tierId);
+      if (el) el.style.display = 'none';
+    });
+    
+    // Remove active from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Show selected tier
+    if (tier === 'tier1') {
+      document.getElementById('linux-tier1').style.display = 'flex';
+      buttons[0].classList.add('active');
+    } else if (tier === 'tier2') {
+      document.getElementById('linux-tier2').style.display = 'flex';
+      buttons[1].classList.add('active');
+    } else if (tier === 'tier3') {
+      document.getElementById('linux-tier3').style.display = 'flex';
+      buttons[2].classList.add('active');
+    } else if (tier === 'tier4') {
+      document.getElementById('linux-tier4').style.display = 'flex';
+      buttons[3].classList.add('active');
+    }
+  }
+
+  // ── Switch Linux Network Tier ──
+  function switchLinuxNetworkTier(tier) {
+    const tiers = ['linux-net-tier1', 'linux-net-tier2', 'linux-net-tier3', 'linux-net-tier4'];
+    const buttons = document.querySelectorAll('#linux-network-content .cs-tier-btn');
+    
+    // Hide all tiers
+    tiers.forEach(tierId => {
+      const el = document.getElementById(tierId);
+      if (el) el.style.display = 'none';
+    });
+    
+    // Remove active from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Show selected tier
+    if (tier === 'tier1') {
+      document.getElementById('linux-net-tier1').style.display = 'flex';
+      buttons[0].classList.add('active');
+    } else if (tier === 'tier2') {
+      document.getElementById('linux-net-tier2').style.display = 'flex';
+      buttons[1].classList.add('active');
+    } else if (tier === 'tier3') {
+      document.getElementById('linux-net-tier3').style.display = 'flex';
+      buttons[2].classList.add('active');
+    } else if (tier === 'tier4') {
+      document.getElementById('linux-net-tier4').style.display = 'flex';
       buttons[3].classList.add('active');
     }
   }
