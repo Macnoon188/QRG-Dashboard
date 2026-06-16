@@ -709,6 +709,50 @@
       display: block;
     }
 
+    /* ── Windows Network Categories ── */
+    .cs-network-category {
+      margin-bottom: 2.5rem;
+    }
+
+    .cs-cat-title {
+      font-size: 1.1rem;
+      color: #79c0ff;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #30363d;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .cs-network-cmd {
+      background: #0d1117;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+    }
+
+    .cs-network-cmd:hover {
+      border-color: #58a6ff;
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1);
+    }
+
+    .cs-network-name {
+      font-size: 0.95rem;
+      color: #e6edf3;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .cs-network-desc {
+      font-size: 0.85rem;
+      color: #8b949e;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
     .cs-hidden {
       display: none;
     }
@@ -857,8 +901,8 @@
           <a class="cs-nav-item coming-soon">VLANs &amp; Subnetting soon</a>
           <a class="cs-nav-item coming-soon">DNS &amp; DHCP soon</a>
           <a class="cs-nav-item" onclick="switchContent('linux-network', null)">🐧 Linux Network Troubleshooting</a>
-          <a class="cs-nav-item coming-soon">🪟 Windows Network Troubleshooting soon</a>
-          <a class="cs-nav-item coming-soon">🍎 MAC soon</a>
+          <a class="cs-nav-item" onclick="switchContent('windows-network', null)">💻 Windows Network Troubleshooting</a>
+          <a class="cs-nav-item" onclick="switchContent('macos-network', null)">🍎 macOS Network Troubleshooting</a>
         </div>
       </div>
 
@@ -1971,6 +2015,379 @@ exit</pre>
 
     </div>
 
+    <!-- WINDOWS NETWORK TROUBLESHOOTING CONTENT -->
+    <div id="windows-network-content" class="cs-content-section cs-hidden">
+
+      <div class="cs-page-header">
+        <p class="breadcrumb">macnoon188://cheatsheet / networking / windows-network</p>
+        <h1>💻 Windows Network Troubleshooting</h1>
+        <p>Essential CMD and PowerShell commands for diagnosing and resolving network issues. Device adapter management, IP configuration, DNS, and connectivity testing.</p>
+      </div>
+
+      <!-- Device Manager Reset -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🔧 Device Manager Reset</h3>
+        <div class="cs-network-cmd cs-severity-critical">
+          <div class="cs-network-name">Reset Network Adapter (GUI Method)</div>
+          <div class="cs-network-desc">Steps: Right-click Start → Device Manager → Network adapters → Right-click adapter → Disable → Wait 10s → Enable → Restart computer</div>
+        </div>
+        <div class="cs-network-cmd cs-severity-critical">
+          <div class="cs-network-name">Uninstall & Reinstall Network Adapter (GUI Method)</div>
+          <div class="cs-network-desc">Steps: Right-click Start → Device Manager → Network adapters → Right-click adapter → Uninstall → Restart computer → Windows auto-installs drivers</div>
+        </div>
+      </div>
+
+      <!-- IP Configuration -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🌐 IP Configuration</h3>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Display All IP Configuration Details</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /all</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Release DHCP IP Address</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /release</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Renew DHCP IP Address</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /renew</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Flush DNS Cache</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /flushdns</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Display DNS Cache</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /displaydns</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Complete IP Reset Workflow</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /release && ipconfig /renew && ipconfig /flushdns && ipconfig /displaydns</pre></div>
+        </div>
+      </div>
+
+      <!-- Connectivity Testing -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">📡 Connectivity Testing</h3>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Test Host Reachability (ping)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Trace Route to Destination</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>tracert <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Test TCP Connection &amp; Port (PowerShell)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Test-NetConnection <span class="cs-placeholder">&lt;hostname&gt;</span> -Port <span class="cs-placeholder">&lt;port_number&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Trace Route (PowerShell)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Test-NetConnection <span class="cs-placeholder">&lt;hostname&gt;</span> -TraceRoute</pre></div>
+        </div>
+      </div>
+
+      <!-- Network Status -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">📊 Network Status</h3>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display All Active Connections &amp; Listening Ports</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -an</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display Active Connections with Process IDs</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -ano</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">View ARP Cache (MAC &lt;→ IP Mappings)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>arp -a</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display Routing Table</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>route print</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display Computer Host Name</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>hostname</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display MAC Addresses</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>getmac</pre></div>
+        </div>
+      </div>
+
+      <!-- DNS Management -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🔍 DNS Management</h3>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Flush DNS Cache (ipconfig)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /flushdns</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">DNS Lookup (nslookup)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">View Local DNS Cache (PowerShell)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-DnsClientCache</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Clear DNS Cache (PowerShell)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Clear-DnsClientCache</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">View DNS Client Configuration (PowerShell)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-DnsClient</pre></div>
+        </div>
+      </div>
+
+      <!-- Network Adapters -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🔌 Network Adapters (PowerShell)</h3>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">List All Network Adapters</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-NetAdapter</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Get Detailed IP Configuration</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-NetIPConfiguration</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">List All IP Addresses</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-NetIPAddress</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Disable Network Adapter</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Disable-NetAdapter -Name <span class="cs-placeholder">&lt;adapter_name&gt;</span> -Confirm:$false</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Enable Network Adapter</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Enable-NetAdapter -Name <span class="cs-placeholder">&lt;adapter_name&gt;</span> -Confirm:$false</pre></div>
+        </div>
+      </div>
+
+      <!-- Firewall & Advanced -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🔥 Firewall &amp; Advanced (netsh)</h3>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Display All Firewall Profiles Status</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh advfirewall show allprofiles</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Reset TCP/IP Stack</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh int ip reset</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Reset Winsock (Windows Socket API)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh winsock reset</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">View Network Interface Statistics</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh int ip show config</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">List All Firewall Rules</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh advfirewall firewall show rule name=all</pre></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAC OS NETWORK TROUBLESHOOTING CONTENT -->
+    <div id="macos-network-content" class="cs-content-section cs-hidden">
+
+      <div class="cs-page-header">
+        <p class="breadcrumb">macnoon188://cheatsheet / networking / macos-network</p>
+        <h1>🍎 macOS Network Troubleshooting</h1>
+        <p>Essential Terminal commands for diagnosing and resolving macOS network issues. Interface configuration, IP management, DNS, Wi-Fi, and connectivity testing.</p>
+      </div>
+
+      <!-- Network Interfaces & Configuration -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🔌 Network Interfaces & Configuration</h3>
+        <div class="cs-network-cmd cs-severity-critical">
+          <div class="cs-network-name">Display All Network Interfaces</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ifconfig</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-critical">
+          <div class="cs-network-name">Display Specific Network Interface (e.g., Wi-Fi en0)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ifconfig <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-critical">
+          <div class="cs-network-name">Bring Interface Up</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> up</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-critical">
+          <div class="cs-network-name">Bring Interface Down</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> down</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-critical">
+          <div class="cs-network-name">List All Hardware Network Ports</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -listallhardwareports</pre></div>
+        </div>
+      </div>
+
+      <!-- IP Configuration & DHCP -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🌐 IP Configuration &amp; DHCP</h3>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Get IP Address for Interface</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig getifaddr <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Get DHCP Configuration</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig getpacket <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Renew DHCP Lease</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ipconfig set <span class="cs-placeholder">&lt;en0&gt;</span> DHCP</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Release DHCP Lease</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ipconfig set <span class="cs-placeholder">&lt;en0&gt;</span> NONE</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-high">
+          <div class="cs-network-name">Set Static IP Address (Temporary)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> 192.168.1.100 netmask 255.255.255.0</pre></div>
+        </div>
+      </div>
+
+      <!-- Connectivity Testing -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">📡 Connectivity Testing</h3>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Test Host Reachability (ping)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Trace Route to Destination</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>traceroute <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Trace Route with Real-Time Updates (MTR)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>mtr <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Network Quality Test (macOS 12.1+)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networkQuality</pre></div>
+        </div>
+      </div>
+
+      <!-- Network Status & Services -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">📊 Network Status &amp; Services</h3>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display All Active Connections</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -an</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display Network Statistics</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -di -I <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">List All Network Services</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -listallnetworkservices</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">View ARP Cache (MAC ↔ IP Mappings)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>arp -a</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Display Routing Table</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -rn</pre></div>
+        </div>
+      </div>
+
+      <!-- DNS Management -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🔍 DNS Management</h3>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">View DNS Configuration</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>scutil --dns</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">Flush DNS Cache</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo dscacheutil -flushcache</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">DNS Lookup (dig)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-medium">
+          <div class="cs-network-name">DNS Lookup (nslookup)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
+        </div>
+      </div>
+
+      <!-- Wi-Fi Management -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">📶 Wi-Fi Management</h3>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Get Current Wi-Fi Network Name (SSID)</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -getairportnetwork <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Get Wi-Fi Power Status</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -getairportpower <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Turn Wi-Fi On</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo networksetup -setairportpower <span class="cs-placeholder">&lt;en0&gt;</span> on</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Turn Wi-Fi Off</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo networksetup -setairportpower <span class="cs-placeholder">&lt;en0&gt;</span> off</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Connect to Wi-Fi Network</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo networksetup -setairportnetwork <span class="cs-placeholder">&lt;en0&gt;</span> "<span class="cs-placeholder">&lt;NetworkName&gt;</span>" "<span class="cs-placeholder">&lt;password&gt;</span>"</pre></div>
+        </div>
+      </div>
+
+      <!-- System Information -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🖥️ System Information</h3>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Display Computer Hostname</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>hostname</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Get Computer Name</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>scutil --get ComputerName</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Set Computer Name</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo scutil --set ComputerName "<span class="cs-placeholder">&lt;NewName&gt;</span>"</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Display macOS Version</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sw_vers</pre></div>
+        </div>
+      </div>
+
+      <!-- Firewall & Security -->
+      <div class="cs-network-category">
+        <h3 class="cs-cat-title">🔥 Firewall &amp; Security</h3>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Check Firewall Status</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>defaults read /Library/Preferences/com.apple.alf globalstate</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Enable Firewall</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Disable Firewall</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 0</pre></div>
+        </div>
+        <div class="cs-network-cmd cs-severity-low">
+          <div class="cs-network-name">Reload Firewall Settings</div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo launchctl load /Library/LaunchDaemons/com.apple.alf.agent.plist</pre></div>
+        </div>
+      </div>
+
+    </div>
+
     <!-- LINUX TROUBLESHOOTING CONTENT -->
     <div id="linux-content" class="cs-content-section cs-hidden">
 
@@ -2224,6 +2641,8 @@ exit</pre>
     const activeDirectoryContent = document.getElementById('active-directory-content');
     const linuxContent = document.getElementById('linux-content');
     const linuxNetworkContent = document.getElementById('linux-network-content');
+    const windowsNetworkContent = document.getElementById('windows-network-content');
+    const macosNetworkContent = document.getElementById('macos-network-content');
 
     // Hide all
     ciscoContent.classList.add('cs-hidden');
@@ -2233,6 +2652,8 @@ exit</pre>
     activeDirectoryContent.classList.add('cs-hidden');
     linuxContent.classList.add('cs-hidden');
     linuxNetworkContent.classList.add('cs-hidden');
+    windowsNetworkContent.classList.add('cs-hidden');
+    macosNetworkContent.classList.add('cs-hidden');
 
     // Show selected
     if (category === 'cisco') {
@@ -2255,6 +2676,10 @@ exit</pre>
     } else if (category === 'linux-network') {
       linuxNetworkContent.classList.remove('cs-hidden');
       switchLinuxNetworkTier('tier1');
+    } else if (category === 'windows-network') {
+      windowsNetworkContent.classList.remove('cs-hidden');
+    } else if (category === 'macos-network') {
+      macosNetworkContent.classList.remove('cs-hidden');
     }
   }
 
