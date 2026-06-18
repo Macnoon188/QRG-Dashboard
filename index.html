@@ -753,6 +753,94 @@
       margin-bottom: 0.5rem;
     }
 
+    /* ── Overview Section Styles ── */
+    .cs-overview-body {
+      color: #e6edf3;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .cs-overview-section {
+      margin-bottom: 3rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .cs-overview-section:last-child {
+      border-bottom: none;
+    }
+
+    .cs-overview-section p {
+      margin-bottom: 1rem;
+      color: #c9d1d9;
+    }
+
+    .cs-overview-heading {
+      font-size: 1.6rem;
+      color: #79c0ff;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .cs-overview-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    .cs-overview-list li {
+      padding: 0.5rem 0 0.5rem 2rem;
+      position: relative;
+      color: #8b949e;
+    }
+
+    .cs-overview-list li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #58a6ff;
+      font-weight: bold;
+    }
+
+    .cs-skill-block {
+      background: #0d1117;
+      border-left: 3px solid #58a6ff;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-radius: 6px;
+    }
+
+    .cs-skill-title {
+      font-size: 1.2rem;
+      color: #79c0ff;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .cs-skill-block p {
+      margin-bottom: 0.75rem;
+      color: #c9d1d9;
+    }
+
+    .cs-skill-block .cs-overview-list {
+      margin-left: 0;
+    }
+
+    .cs-italic {
+      font-style: italic;
+      color: #b0f0ff;
+    }
+
+    .cs-closing-line {
+      font-size: 1.2rem;
+      color: #81ff7f;
+      font-weight: 700;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid #30363d;
+    }
+
     .cs-hidden {
       display: none;
     }
@@ -871,7 +959,7 @@
 
     <div class="cs-nav-container">
       <div class="cs-nav-group">
-        <a href="cheatsheet.html" class="cs-nav-item">🏠 &nbsp;Overview</a>
+        <a class="cs-nav-item" onclick="switchContent('overview', null)">🏠 &nbsp;Overview</a>
       </div>
 
       <!-- WINDOWS GROUP -->
@@ -945,6 +1033,140 @@
 
   <!-- MAIN CONTENT -->
   <main class="cs-main">
+
+    <!-- OVERVIEW / HOMEPAGE CONTENT -->
+    <div id="overview-content" class="cs-content-section">
+
+      <div class="cs-page-header">
+        <p class="breadcrumb">macnoon188://cheatsheet</p>
+        <h1>Welcome to the Quick Reference Guide Dashboard</h1>
+        <p>More Than Commands. A Troubleshooting Mindset.</p>
+      </div>
+
+      <div class="cs-overview-body">
+
+        <div class="cs-overview-section">
+          <p>IT Support does not just teach you how to repair systems. It teaches you how to think.</p>
+          <p>Many people see IT Support as simply:</p>
+          <ul class="cs-overview-list">
+            <li>Resetting passwords</li>
+            <li>Fixing computer errors</li>
+            <li>Installing software</li>
+            <li>Closing tickets</li>
+          </ul>
+          <p>But spend enough time in the field, and you quickly realize that the role goes much deeper.</p>
+          <p><strong>Every issue is a puzzle. Every failure leaves behind clues. Every successful resolution comes from understanding why something happened, not just how to make the error disappear.</strong></p>
+        </div>
+
+        <div class="cs-overview-section">
+          <h2 class="cs-overview-heading">The Skills That Build Great IT Engineers</h2>
+
+          <div class="cs-skill-block">
+            <h3 class="cs-skill-title">Patience</h3>
+            <p>Not everyone understands technology — and that is okay. A great IT professional learns how to translate complex technical problems into simple language. The goal is not to demonstrate how much you know, but to help others understand.</p>
+          </div>
+
+          <div class="cs-skill-block">
+            <h3 class="cs-skill-title">Critical Thinking</h3>
+            <p>The best engineers move beyond <span class="cs-italic">"How do I fix this quickly?"</span> and start asking <span class="cs-italic">"Why did this happen, and how do we prevent it from happening again?"</span></p>
+            <p>Temporary fixes solve today's problem. Root cause analysis prevents tomorrow's outage.</p>
+          </div>
+
+          <div class="cs-skill-block">
+            <h3 class="cs-skill-title">Communication</h3>
+            <p>Sometimes you are not fixing a server. Sometimes you are reassuring a frustrated employee who cannot work because a critical system has failed. Your ability to stay calm, communicate clearly, and manage expectations is just as valuable as your technical knowledge.</p>
+          </div>
+
+          <div class="cs-skill-block">
+            <h3 class="cs-skill-title">Remaining Calm Under Pressure</h3>
+            <p>When systems fail, stress spreads quickly. Users become frustrated. Management wants answers. The business begins losing productivity. In those moments, your greatest tool is not a command line. It is your ability to remain calm, gather evidence, and approach the problem logically.</p>
+          </div>
+
+          <div class="cs-skill-block">
+            <h3 class="cs-skill-title">Pattern Recognition</h3>
+            <p>Most problems are not completely new. Experience teaches you to recognize patterns:</p>
+            <ul class="cs-overview-list">
+              <li>Similar error messages</li>
+              <li>Common configuration mistakes</li>
+              <li>Hardware failure indicators</li>
+              <li>Network bottlenecks</li>
+              <li>Security events</li>
+            </ul>
+            <p>The more systems you work on, the faster you learn to connect the dots.</p>
+          </div>
+
+          <div class="cs-skill-block">
+            <h3 class="cs-skill-title">Continuous Learning &amp; Humility</h3>
+            <p>Technology changes constantly. A tool you mastered yesterday may evolve tomorrow. Every engineer encounters problems they have never seen before. That does not mean failure — it is an opportunity to research, experiment, and grow.</p>
+          </div>
+        </div>
+
+        <div class="cs-overview-section">
+          <h2 class="cs-overview-heading">Understanding the Bigger Picture</h2>
+          <p>A smooth-running office is not simply the result of computers working properly. Behind every login, file share, email, video meeting, and business application is an entire infrastructure working together.</p>
+          <p>That ecosystem includes:</p>
+          <ul class="cs-overview-list">
+            <li><strong>Internet Service Providers (ISP), modems, and routers</strong> keeping the organization connected</li>
+            <li><strong>Firewalls</strong> acting as the first line of defense</li>
+            <li><strong>Core and access switches</strong> directing network traffic</li>
+            <li><strong>Servers</strong> providing critical applications and services</li>
+            <li><strong>Storage systems</strong> protecting business data</li>
+            <li><strong>UPS devices</strong> ensuring systems remain available during power interruptions</li>
+            <li><strong>Wireless access points and structured cabling</strong> connecting users to the network</li>
+          </ul>
+          <p>From administrative departments to finance systems, meeting rooms, and shared printers — everything depends on this foundation operating reliably.</p>
+        </div>
+
+        <div class="cs-overview-section">
+          <h2 class="cs-overview-heading">Infrastructure and Security Go Hand in Hand</h2>
+          <p>Modern IT Support is not only about connectivity. A properly designed infrastructure:</p>
+          <ul class="cs-overview-list">
+            <li>Controls access to sensitive information</li>
+            <li>Reduces the risk of unauthorized access</li>
+            <li>Supports monitoring and incident response</li>
+            <li>Creates multiple layers of security</li>
+            <li>Makes troubleshooting faster and more efficient</li>
+          </ul>
+          <p>Good infrastructure allows engineers to spend less time fighting repeated problems and more time improving systems.</p>
+        </div>
+
+        <div class="cs-overview-section">
+          <h2 class="cs-overview-heading">The Philosophy Behind QRG Dashboard</h2>
+          <p>This platform was built from real-world IT experience. It is designed to help technicians, administrators, and engineers troubleshoot with confidence.</p>
+          <p>Inside this dashboard you will find quick references for:</p>
+          <ul class="cs-overview-list">
+            <li>Windows troubleshooting</li>
+            <li>Active Directory administration</li>
+            <li>Linux diagnostics</li>
+            <li>Cisco networking commands</li>
+            <li>PowerShell automation</li>
+            <li>Event Log analysis</li>
+            <li>Security monitoring</li>
+            <li>Virtualization platforms</li>
+            <li>Cloud infrastructure</li>
+          </ul>
+          <p><strong>The goal is not to provide every command ever created. The goal is to provide the right information at the moment you need it.</strong></p>
+        </div>
+
+        <div class="cs-overview-section">
+          <h2 class="cs-overview-heading">A Final Thought</h2>
+          <p>IT Support is often considered an entry point into technology. The truth is: <strong>It is where real engineers are built.</strong></p>
+          <p>It develops:</p>
+          <ul class="cs-overview-list">
+            <li>Analytical thinking</li>
+            <li>Patience</li>
+            <li>Communication skills</li>
+            <li>Resilience under pressure</li>
+            <li>A security-focused mindset</li>
+            <li>A habit of continuous learning</li>
+          </ul>
+          <p><strong>The best engineers are not the ones who memorize the most commands. They are the ones who know how to observe, investigate, understand, and solve problems.</strong></p>
+          <p class="cs-closing-line">Welcome to QRG Dashboard. Let's troubleshoot smarter.</p>
+        </div>
+
+      </div>
+
+    </div>
 
     <!-- CISCO CONTENT -->
     <div id="cisco-content" class="cs-content-section">
@@ -2634,6 +2856,7 @@ exit</pre>
 
   // ── Switch Content (Cisco vs Windows vs Event Logs vs PowerShell vs Active Directory vs Linux) ──
   function switchContent(category, tier) {
+    const overviewContent = document.getElementById('overview-content');
     const ciscoContent = document.getElementById('cisco-content');
     const windowsContent = document.getElementById('windows-content');
     const eventLogsContent = document.getElementById('event-logs-content');
@@ -2645,6 +2868,7 @@ exit</pre>
     const macosNetworkContent = document.getElementById('macos-network-content');
 
     // Hide all
+    overviewContent.classList.add('cs-hidden');
     ciscoContent.classList.add('cs-hidden');
     windowsContent.classList.add('cs-hidden');
     eventLogsContent.classList.add('cs-hidden');
@@ -2656,7 +2880,9 @@ exit</pre>
     macosNetworkContent.classList.add('cs-hidden');
 
     // Show selected
-    if (category === 'cisco') {
+    if (category === 'overview') {
+      overviewContent.classList.remove('cs-hidden');
+    } else if (category === 'cisco') {
       ciscoContent.classList.remove('cs-hidden');
     } else if (category === 'windows') {
       windowsContent.classList.remove('cs-hidden');
@@ -2839,7 +3065,7 @@ exit</pre>
     const tier2Table = document.getElementById('tier2-table');
     const tier3Table = document.getElementById('tier3-table');
     const tier4Table = document.getElementById('tier4-table');
-    const buttons = document.querySelectorAll('.cs-tier-btn:not(.coming-soon)');
+    const buttons = document.querySelectorAll('#windows-content .cs-tier-btn');
     
     // Hide all tables
     tier1Table.style.display = 'none';
@@ -2929,12 +3155,14 @@ exit</pre>
 
   // ── Copy Command (Windows) ──
   function copyCommand(text) {
+    const target = (window.event && window.event.target) || document.activeElement;
     navigator.clipboard.writeText(text).then(() => {
-      event.target.textContent = 'copied ✓';
-      event.target.classList.add('copied');
+      if (!target) return;
+      target.textContent = 'copied ✓';
+      target.classList.add('copied');
       setTimeout(() => {
-        event.target.textContent = 'copy';
-        event.target.classList.remove('copied');
+        target.textContent = 'copy';
+        target.classList.remove('copied');
       }, 2000);
     });
   }
@@ -2955,6 +3183,11 @@ exit</pre>
       });
     }
   }
+
+  // ── Initialize: Show Overview on page load ──
+  document.addEventListener('DOMContentLoaded', function() {
+    switchContent('overview', null);
+  });
 </script>
 </body>
 </html>
