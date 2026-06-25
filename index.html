@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- QRG Dashboard v1.0.2 — Stabilization Pass: switchContent() null-safe, dead module links removed (2026-06-24) -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -140,15 +141,16 @@
       display: block;
       padding: 0.45rem 1.25rem 0.45rem 2rem;
       font-size: 0.82rem;
-      color: #8b949e;
+      color: #e6edf3;
       text-decoration: none;
       border-left: 2px solid transparent;
       cursor: pointer;
       transition: color 0.15s, border-color 0.15s, background 0.15s;
+      cursor: pointer;
     }
 
     .cs-nav-item:hover {
-      color: #e6edf3;
+      color: #ffffff;
       background: #161b22;
       text-decoration: none;
     }
@@ -287,7 +289,7 @@
 
     .cs-dropdown-item {
       padding: 0.75rem 1rem;
-      color: #8b949e;
+      color: #e6edf3;
       cursor: pointer;
       border-bottom: 1px solid #21262d;
       transition: all 0.2s;
@@ -295,7 +297,7 @@
 
     .cs-dropdown-item:hover {
       background: #161b22;
-      color: #81ff7f;
+      color: #ffffff;
     }
 
     .cs-dropdown-item:last-child {
@@ -373,7 +375,7 @@
       font-family: 'Courier New', monospace;
       font-size: 0.82rem;
       color: #81ff7f;
-      line-height: 1.8;
+      line-height: 1.6;
       overflow-x: auto;
       padding-right: 4.5rem;
     }
@@ -756,13 +758,13 @@
     /* ── Overview Section Styles ── */
     .cs-overview-body {
       color: #e6edf3;
-      line-height: 1.8;
+      line-height: 1.6;
       font-size: 1rem;
     }
 
     .cs-overview-section {
-      margin-bottom: 3rem;
-      padding: 1.5rem 0;
+      margin-bottom: 1.75rem;
+      padding: 0.75rem 0;
       border-bottom: 1px solid #30363d;
     }
 
@@ -771,7 +773,7 @@
     }
 
     .cs-overview-section p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       color: #c9d1d9;
     }
 
@@ -806,8 +808,8 @@
     .cs-skill-block {
       background: #0d1117;
       border-left: 3px solid #58a6ff;
-      padding: 1.25rem;
-      margin-bottom: 1.25rem;
+      padding: 1rem;
+      margin-bottom: 0.85rem;
       border-radius: 6px;
     }
 
@@ -922,6 +924,197 @@
       }
     }
 
+    /* ── COMPREHENSIVE MOBILE RESPONSIVE DESIGN ── */
+    @media (max-width: 768px) {
+      .cs-wrapper {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .cs-sidebar {
+        width: 100%;
+        min-width: 100%;
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #21262d;
+        max-height: none;
+      }
+
+      .cs-sidebar-header {
+        padding: 1rem 1rem 0.75rem;
+      }
+
+      .cs-sidebar-header .cs-logo {
+        font-size: 0.65rem;
+      }
+
+      .cs-sidebar-header h2 {
+        font-size: 0.9rem;
+      }
+
+      .cs-search {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .cs-nav-group-label {
+        padding: 0.5rem 1rem;
+        font-size: 0.65rem;
+      }
+
+      .cs-nav-item {
+        padding: 0.4rem 1rem 0.4rem 1.5rem;
+        font-size: 0.75rem;
+      }
+
+      .cs-main {
+        flex: 1;
+        padding: 1.5rem 1rem;
+        overflow-y: auto;
+      }
+
+      .cs-page-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+      }
+
+      .cs-page-header .breadcrumb {
+        font-size: 0.65rem;
+        word-break: break-word;
+        margin-bottom: 0.35rem;
+      }
+
+      .cs-page-header h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .cs-page-header p {
+        font-size: 0.8rem;
+      }
+
+      .cs-search-wrap {
+        margin-bottom: 1.5rem;
+      }
+
+      .cs-ref-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .cs-ref-section-header h2 {
+        font-size: 0.85rem;
+      }
+
+      .cs-ref-section-body {
+        padding: 1rem;
+      }
+
+      .cs-code-block pre {
+        font-size: 0.75rem;
+        padding: 0.75rem 0.75rem 0.75rem 1rem;
+        padding-right: 3.5rem;
+      }
+
+      .cs-copy-btn {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        right: 0.4rem;
+        top: 0.4rem;
+      }
+
+      .cs-device-toggle {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .cs-tier-btn {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.75rem;
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 140px;
+      }
+
+      .cs-network-category {
+        margin-bottom: 1.75rem;
+      }
+
+      .cs-cat-title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .cs-network-cmd {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .cs-network-name {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .cs-overview-heading {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .cs-skill-block {
+        padding: 0.85rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .cs-skill-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .cs-overview-section {
+        margin-bottom: 1.25rem;
+        padding: 0.5rem 0;
+      }
+
+      footer {
+        padding: 1rem 0;
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cs-main {
+        padding: 1rem 0.75rem;
+      }
+
+      .cs-page-header h1 {
+        font-size: 1.2rem;
+      }
+
+      .cs-tier-btn {
+        flex: 1 1 100%;
+        min-width: auto;
+        font-size: 0.65rem;
+      }
+
+      .cs-nav-item {
+        padding: 0.35rem 0.75rem 0.35rem 1.25rem;
+        font-size: 0.7rem;
+      }
+
+      .cs-code-block pre {
+        font-size: 0.7rem;
+      }
+
+      .cs-sidebar-header {
+        padding: 0.75rem 0.75rem 0.5rem;
+      }
+
+      .cs-search {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.5rem;
+      }
+    }
+
     /* ── Matrix Canvas ── */
     #matrix-canvas {
       position: fixed;
@@ -954,60 +1147,60 @@
   <aside class="cs-sidebar">
     <div class="cs-sidebar-header">
       <span class="cs-logo">macnoon188://</span>
-      <input class="cs-search" id="cs-search" type="text" placeholder="search..." oninput="filterContent()" />
+      <input class="cs-search" id="cs-search" type="text" placeholder="search..." oninput="filterContent(); return false;" />
     </div>
 
     <div class="cs-nav-container">
       <div class="cs-nav-group">
-        <a class="cs-nav-item" onclick="switchContent('overview', null)">🏠 &nbsp;Overview</a>
+        <a href="#" class="cs-nav-item" onclick="switchContent('overview', null); return false;">🏠 &nbsp;Overview</a>
       </div>
 
       <!-- WINDOWS GROUP -->
       <div class="cs-nav-group">
-        <div class="cs-nav-group-label open" onclick="toggleGroup(this)">
+        <div class="cs-nav-group-label open" onclick="toggleGroup(this); return false;">
           💻 Windows <span class="chevron">▶</span>
         </div>
         <div class="cs-nav-items open">
-          <a class="cs-nav-item" onclick="switchContent('windows', 'tier1')">🔴 Tier 1: Critical (BSOD)</a>
-          <a class="cs-nav-item" onclick="switchContent('windows', 'tier2')">🟡 Tier 2: Device &amp; Drivers</a>
-          <a class="cs-nav-item" onclick="switchContent('windows', 'tier3')">🔵 Tier 3: Apps &amp; Runtime</a>
-          <a class="cs-nav-item" onclick="switchContent('windows', 'tier4')">🟢 Tier 4: Updates &amp; Maintenance</a>
-          <a class="cs-nav-item" onclick="switchContent('event-logs', null)">📄 Event Log IDs</a>
-          <a class="cs-nav-item" onclick="switchContent('powershell', null)">⌨️ PowerShell Snippets</a>
-          <a class="cs-nav-item" onclick="switchContent('active-directory', null)">👥 Active Directory</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('windows', 'tier1'); return false;">🔴 Tier 1: Critical (BSOD)</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('windows', 'tier2'); return false;">🟡 Tier 2: Device &amp; Drivers</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('windows', 'tier3'); return false;">🔵 Tier 3: Apps &amp; Runtime</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('windows', 'tier4'); return false;">🟢 Tier 4: Updates &amp; Maintenance</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('event-logs', null); return false;">📄 Event Log IDs</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('powershell', null); return false;">⌨️ PowerShell Snippets</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('active-directory', null); return false;">👥 Active Directory</a>
         </div>
       </div>
 
       <!-- NETWORKING GROUP -->
       <div class="cs-nav-group">
-        <div class="cs-nav-group-label open" onclick="toggleGroup(this)">
+        <div class="cs-nav-group-label open" onclick="toggleGroup(this); return false;">
           🌐 Networking <span class="chevron">▶</span>
         </div>
         <div class="cs-nav-items open">
-          <a class="cs-nav-item" onclick="switchContent('cisco', null)">Cisco IOS</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('cisco', null); return false;">Cisco IOS</a>
           <a class="cs-nav-item coming-soon">pfSense soon</a>
           <a class="cs-nav-item coming-soon">VLANs &amp; Subnetting soon</a>
           <a class="cs-nav-item coming-soon">DNS &amp; DHCP soon</a>
-          <a class="cs-nav-item" onclick="switchContent('linux-network', null)">🐧 Linux Network Troubleshooting</a>
-          <a class="cs-nav-item" onclick="switchContent('windows-network', null)">💻 Windows Network Troubleshooting</a>
-          <a class="cs-nav-item" onclick="switchContent('macos-network', null)">🍎 macOS Network Troubleshooting</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('linux-network', null); return false;">🐧 Linux Network Troubleshooting</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('windows-network', null); return false;">💻 Windows Network Troubleshooting</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('macos-network', null); return false;">🍎 macOS Network Troubleshooting</a>
         </div>
       </div>
 
       <div class="cs-nav-group">
-        <div class="cs-nav-group-label" onclick="toggleGroup(this)">
+        <div class="cs-nav-group-label" onclick="toggleGroup(this); return false;">
           🐧 Linux <span class="chevron">▶</span>
         </div>
         <div class="cs-nav-items">
-          <a class="cs-nav-item" onclick="switchContent('linux', null)">Troubleshooting Commands</a>
-          <a class="cs-nav-item coming-soon">Bash Scripting soon</a>
-          <a class="cs-nav-item coming-soon">Permissions &amp; Users soon</a>
-          <a class="cs-nav-item coming-soon">Systemd &amp; Services soon</a>
+          <a href="#" class="cs-nav-item" onclick="switchContent('linux', null); return false;">Troubleshooting Commands</a>
+          <a class="cs-nav-item coming-soon">Bash Scripting</a>
+          <a class="cs-nav-item coming-soon">Permissions &amp; Users</a>
+          <a class="cs-nav-item coming-soon">Systemd &amp; Services</a>
         </div>
       </div>
 
       <div class="cs-nav-group">
-        <div class="cs-nav-group-label" onclick="toggleGroup(this)">
+        <div class="cs-nav-group-label" onclick="toggleGroup(this); return false;">
           🛡️ Security <span class="chevron">▶</span>
         </div>
         <div class="cs-nav-items">
@@ -1019,7 +1212,7 @@
       </div>
 
       <div class="cs-nav-group">
-        <div class="cs-nav-group-label" onclick="toggleGroup(this)">
+        <div class="cs-nav-group-label" onclick="toggleGroup(this); return false;">
           ☁️ Cloud &amp; Dev <span class="chevron">▶</span>
         </div>
         <div class="cs-nav-items">
@@ -1180,23 +1373,23 @@
       <!-- Device Toggle -->
       <div class="cs-device-toggle">
         <label>Device Type:</label>
-        <button class="cs-device-btn active" onclick="switchDevice('router')">Router</button>
-        <button class="cs-device-btn" onclick="switchDevice('switch')">Switch</button>
+        <button class="cs-device-btn active" onclick="switchDevice('router'); return false;">Router</button>
+        <button class="cs-device-btn" onclick="switchDevice('switch'); return false;">Switch</button>
       </div>
 
       <!-- Category Dropdown -->
       <div class="cs-category-dropdown">
-        <button class="cs-dropdown-btn" onclick="toggleDropdown()">📑 Jump to Category ▼</button>
+        <button class="cs-dropdown-btn" onclick="toggleDropdown(); return false;">📑 Jump to Category ▼</button>
         <div class="cs-dropdown-content" id="dropdownContent">
-          <div class="cs-dropdown-item" onclick="jumpToSection('setup')">Basic Device Setup &amp; Security</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('interfaces')">Interface Configuration</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('static-routes')">Static Routes</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('ripv2')">RIP v2 Configuration</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('ospf')">OSPF Configuration</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('vlan')">VLAN Configuration &amp; Trunking</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('intervlan')">Inter-VLAN Routing</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('ssh')">SSH &amp; Management Security</div>
-          <div class="cs-dropdown-item" onclick="jumpToSection('management')">Device Management</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('setup'); return false;">Basic Device Setup &amp; Security</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('interfaces'); return false;">Interface Configuration</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('static-routes'); return false;">Static Routes</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('ripv2'); return false;">RIP v2 Configuration</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('ospf'); return false;">OSPF Configuration</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('vlan'); return false;">VLAN Configuration &amp; Trunking</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('intervlan'); return false;">Inter-VLAN Routing</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('ssh'); return false;">SSH &amp; Management Security</div>
+          <div class="cs-dropdown-item" onclick="jumpToSection('management'); return false;">Device Management</div>
         </div>
       </div>
 
@@ -1211,7 +1404,7 @@
           
           <div class="cs-code-variant-label">➤ Router Configuration</div>
           <div class="cs-code-block device-router">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>enable
 configure terminal
 hostname MyRouter
@@ -1235,7 +1428,7 @@ service password-encryption</pre>
 
           <div class="cs-code-variant-label">➤ Switch Configuration</div>
           <div class="cs-code-block device-switch cs-hidden">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>enable
 configure terminal
 hostname MySwitch
@@ -1269,7 +1462,7 @@ service password-encryption</pre>
           
           <div class="cs-code-variant-label">➤ Router Configuration</div>
           <div class="cs-code-block device-router">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>interface gigabitEthernet 0/0/0
 description Link to ISP
 ip address 192.168.1.1 255.255.255.0
@@ -1289,7 +1482,7 @@ exit</pre>
 
           <div class="cs-code-variant-label">➤ Switch Configuration</div>
           <div class="cs-code-block device-switch cs-hidden">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>interface vlan 1
 ip address 192.168.1.2 255.255.255.0
 no shutdown
@@ -1328,10 +1521,10 @@ exit</pre>
       <!-- Tier Navigation -->
       <div class="cs-device-toggle">
         <label>Tier:</label>
-        <button class="cs-tier-btn active" onclick="switchWindowsTier('tier1')">🔴 Tier 1: Critical</button>
-        <button class="cs-tier-btn" onclick="switchWindowsTier('tier2')">🟡 Tier 2: Device &amp; Drivers</button>
-        <button class="cs-tier-btn" onclick="switchWindowsTier('tier3')">🔵 Tier 3: Apps &amp; Runtime</button>
-        <button class="cs-tier-btn" onclick="switchWindowsTier('tier4')">🟢 Tier 4: Updates &amp; Maintenance</button>
+        <button class="cs-tier-btn active" onclick="switchWindowsTier('tier1'); return false;">🔴 Tier 1: Critical</button>
+        <button class="cs-tier-btn" onclick="switchWindowsTier('tier2'); return false;">🟡 Tier 2: Device &amp; Drivers</button>
+        <button class="cs-tier-btn" onclick="switchWindowsTier('tier3'); return false;">🔵 Tier 3: Apps &amp; Runtime</button>
+        <button class="cs-tier-btn" onclick="switchWindowsTier('tier4'); return false;">🟢 Tier 4: Updates &amp; Maintenance</button>
       </div>
 
       <!-- Tier 1 Table -->
@@ -1351,14 +1544,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔴</span>Memory Corruption</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x0000001A')">0x0000001A</div>
-              <div class="cs-code-tag" onclick="copyCommand('MEMORY_MANAGEMENT')">MEMORY_MANAGEMENT</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x0000001A'); return false;">0x0000001A</div>
+              <div class="cs-code-tag" onclick="copyCommand('MEMORY_MANAGEMENT'); return false;">MEMORY_MANAGEMENT</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Run memory diagnostics:</div>
               <div class="cs-action-block">
                 mdsched.exe
-                <span class="cs-action-copy" onclick="copyCommand('mdsched.exe')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('mdsched.exe'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1372,18 +1565,18 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔴</span>System Process Failure</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x000000EF')">0x000000EF</div>
-              <div class="cs-code-tag" onclick="copyCommand('CRITICAL_PROCESS_DIED')">CRITICAL_PROCESS_DIED</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x000000EF'); return false;">0x000000EF</div>
+              <div class="cs-code-tag" onclick="copyCommand('CRITICAL_PROCESS_DIED'); return false;">CRITICAL_PROCESS_DIED</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Run SFC and DISM repair scans in elevated CMD:</div>
               <div class="cs-action-block">
                 sfc /scannow
-                <span class="cs-action-copy" onclick="copyCommand('sfc /scannow')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('sfc /scannow'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 dism /online /cleanup-image /restorehealth
-                <span class="cs-action-copy" onclick="copyCommand('dism /online /cleanup-image /restorehealth')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('dism /online /cleanup-image /restorehealth'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1397,14 +1590,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔴</span>Storage / Boot Drive Failure</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x0000007B')">0x0000007B</div>
-              <div class="cs-code-tag" onclick="copyCommand('INACCESSIBLE_BOOT_DEVICE')">INACCESSIBLE_BOOT_DEVICE</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x0000007B'); return false;">0x0000007B</div>
+              <div class="cs-code-tag" onclick="copyCommand('INACCESSIBLE_BOOT_DEVICE'); return false;">INACCESSIBLE_BOOT_DEVICE</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Boot into BIOS/UEFI. Check if SATA/NVMe controller mode changed (AHCI/RAID). Run check disk:</div>
               <div class="cs-action-block">
                 chkdsk c: /f /r
-                <span class="cs-action-copy" onclick="copyCommand('chkdsk c: /f /r')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('chkdsk c: /f /r'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1418,14 +1611,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔴</span>Driver Communication Crash</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x0000009F')">0x0000009F</div>
-              <div class="cs-code-tag" onclick="copyCommand('DRIVER_POWER_STATE_FAILURE')">DRIVER_POWER_STATE_FAILURE</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x0000009F'); return false;">0x0000009F</div>
+              <div class="cs-code-tag" onclick="copyCommand('DRIVER_POWER_STATE_FAILURE'); return false;">DRIVER_POWER_STATE_FAILURE</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Identify the crashing driver using driver verifier or check device manager for power saving settings:</div>
               <div class="cs-action-block">
                 verifier
-                <span class="cs-action-copy" onclick="copyCommand('verifier')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('verifier'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1439,8 +1632,8 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔴</span>Kernel Memory Exception</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x00000050')">0x00000050</div>
-              <div class="cs-code-tag" onclick="copyCommand('PAGE_FAULT_IN_NONPAGED_AREA')">PAGE_FAULT_IN_NONPAGED_AREA</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x00000050'); return false;">0x00000050</div>
+              <div class="cs-code-tag" onclick="copyCommand('PAGE_FAULT_IN_NONPAGED_AREA'); return false;">PAGE_FAULT_IN_NONPAGED_AREA</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Test RAM and inspect third-party antivirus/virtualization drivers. Isolate newly installed software in Safe Mode.</div>
@@ -1469,14 +1662,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟡</span>Device Initialization Failure</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('Code 10')">Code 10</div>
+              <div class="cs-code-tag" onclick="copyCommand('Code 10'); return false;">Code 10</div>
               <div style="font-size: 0.75rem; color: #8b949e; margin-top: 0.5rem;">Device cannot start</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Open Device Manager to locate the device, uninstall it, and scan for hardware changes:</div>
               <div class="cs-action-block">
                 devmgmt.msc
-                <span class="cs-action-copy" onclick="copyCommand('devmgmt.msc')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('devmgmt.msc'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1490,14 +1683,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟡</span>Driver Corruption / Registry Block</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('Code 39')">Code 39</div>
+              <div class="cs-code-tag" onclick="copyCommand('Code 39'); return false;">Code 39</div>
               <div style="font-size: 0.75rem; color: #8b949e; margin-top: 0.5rem;">Driver load failure</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Check for corrupted registry filters or reinstall the driver package. Use pnputil to force driver removal via CMD:</div>
               <div class="cs-action-block">
                 pnputil /delete-driver <span class="cs-placeholder">&lt;oem#.inf&gt;</span> /uninstall
-                <span class="cs-action-copy" onclick="copyCommand('pnputil /delete-driver <oem#.inf> /uninstall')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('pnputil /delete-driver <oem#.inf> /uninstall'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1511,18 +1704,18 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟡</span>Hardware / Component Failure</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('Code 43')">Code 43</div>
+              <div class="cs-code-tag" onclick="copyCommand('Code 43'); return false;">Code 43</div>
               <div style="font-size: 0.75rem; color: #8b949e; margin-top: 0.5rem;">Device stopped by Windows</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Power cycle the component. For USB/PCIe issues, disable fast startup or toggle device status via PowerShell:</div>
               <div class="cs-action-block">
                 Disable-PnpDevice -InstanceId "<span class="cs-placeholder">ID</span>" -Confirm:$false
-                <span class="cs-action-copy" onclick="copyCommand('Disable-PnpDevice -InstanceId \"ID\" -Confirm:$false')">copy</span>
+                <span class="cs-action-copy" onclick='copyCommand("Disable-PnpDevice -InstanceId \"ID\" -Confirm:$false"); return false;'>copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 Enable-PnpDevice -InstanceId "<span class="cs-placeholder">ID</span>" -Confirm:$false
-                <span class="cs-action-copy" onclick="copyCommand('Enable-PnpDevice -InstanceId \"ID\" -Confirm:$false')">copy</span>
+                <span class="cs-action-copy" onclick='copyCommand("Enable-PnpDevice -InstanceId \"ID\" -Confirm:$false"); return false;'>copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1536,7 +1729,7 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟡</span>Driver Signature Enforcement Block</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('Code 52')">Code 52</div>
+              <div class="cs-code-tag" onclick="copyCommand('Code 52'); return false;">Code 52</div>
               <div style="font-size: 0.75rem; color: #8b949e; margin-top: 0.5rem;">Digital signature invalid</div>
             </td>
             <td data-label="Quick Triage Action">
@@ -1553,22 +1746,22 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟡</span>Network Component Incompatibility</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x80071AC3')">0x80071AC3</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80071AC3'); return false;">0x80071AC3</div>
               <div style="font-size: 0.75rem; color: #8b949e; margin-top: 0.5rem;">Network adapter/Wi-Fi dropouts</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Reset the entire network stack and flush DNS via elevated prompt:</div>
               <div class="cs-action-block">
                 netsh int ip reset
-                <span class="cs-action-copy" onclick="copyCommand('netsh int ip reset')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('netsh int ip reset'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 netsh winsock reset
-                <span class="cs-action-copy" onclick="copyCommand('netsh winsock reset')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('netsh winsock reset'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 ipconfig /flushdns
-                <span class="cs-action-copy" onclick="copyCommand('ipconfig /flushdns')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('ipconfig /flushdns'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1595,18 +1788,18 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔵</span>Permission Denied / Blocked</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x80070005')">0x80070005</div>
-              <div class="cs-code-tag" onclick="copyCommand('ACCESS_DENIED')">ACCESS_DENIED</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80070005'); return false;">0x80070005</div>
+              <div class="cs-code-tag" onclick="copyCommand('ACCESS_DENIED'); return false;">ACCESS_DENIED</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Force launch the app with administrative privileges, or clear user profile temp files via CMD:</div>
               <div class="cs-action-block">
                 runas /user:Administrator "C:\Path\To\App.exe"
-                <span class="cs-action-copy" onclick="copyCommand('runas /user:Administrator \"C:\\Path\\To\\App.exe\"')">copy</span>
+                <span class="cs-action-copy" onclick='copyCommand("runas /user:Administrator \"C:\\Path\\To\\App.exe\""); return false;'>copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 del /q /f /s %temp%\*
-                <span class="cs-action-copy" onclick="copyCommand('del /q /f /s %temp%\\*')">copy</span>
+                <span class="cs-action-copy" onclick='copyCommand("del /q /f /s %temp%\\*"); return false;'>copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1620,18 +1813,18 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔵</span>Microsoft Store App Corruption</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x80246007')">0x80246007</div>
-              <div class="cs-code-tag" onclick="copyCommand('0x80072EE7')">0x80072EE7</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80246007'); return false;">0x80246007</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80072EE7'); return false;">0x80072EE7</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Reset the Microsoft Store cache and re-register system packages via PowerShell:</div>
               <div class="cs-action-block">
                 wsreset.exe
-                <span class="cs-action-copy" onclick="copyCommand('wsreset.exe')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('wsreset.exe'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 Get-AppXPackage -AllUsers <span class="cs-placeholder">|</span> Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-                <span class="cs-action-copy" onclick="copyCommand('Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}')">copy</span>
+                <span class="cs-action-copy" onclick='copyCommand("Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register \"$($_.InstallLocation)\\AppXManifest.xml\"}"); return false;'>copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1645,8 +1838,8 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔵</span>Environment / DLL Conflict</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0xc000007b')">0xc000007b</div>
-              <div class="cs-code-tag" onclick="copyCommand('INVALID_IMAGE_FORMAT')">INVALID_IMAGE_FORMAT</div>
+              <div class="cs-code-tag" onclick="copyCommand('0xc000007b'); return false;">0xc000007b</div>
+              <div class="cs-code-tag" onclick="copyCommand('INVALID_IMAGE_FORMAT'); return false;">INVALID_IMAGE_FORMAT</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Reinstall the application's required runtime dependencies. Repair Microsoft Visual C++ Redistributables or .NET Framework via Programs &amp; Features or direct installer.</div>
@@ -1662,8 +1855,8 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔵</span>Memory Allocation Leak</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0xc0000005')">0xc0000005</div>
-              <div class="cs-code-tag" onclick="copyCommand('STATUS_ACCESS_VIOLATION')">STATUS_ACCESS_VIOLATION</div>
+              <div class="cs-code-tag" onclick="copyCommand('0xc0000005'); return false;">0xc0000005</div>
+              <div class="cs-code-tag" onclick="copyCommand('STATUS_ACCESS_VIOLATION'); return false;">STATUS_ACCESS_VIOLATION</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Check Task Manager for high background memory usage. Disable third-party browser extensions or hardware acceleration in browser settings.</div>
@@ -1679,14 +1872,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🔵</span>App Initialization Failure</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0xc0000142')">0xc0000142</div>
-              <div class="cs-code-tag" onclick="copyCommand('DLL_INITIALIZATION_FAILED')">DLL_INITIALIZATION_FAILED</div>
+              <div class="cs-code-tag" onclick="copyCommand('0xc0000142'); return false;">0xc0000142</div>
+              <div class="cs-code-tag" onclick="copyCommand('DLL_INITIALIZATION_FAILED'); return false;">DLL_INITIALIZATION_FAILED</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Check if anti-malware or security agents are blocking the DLL hook. Run a clean boot using configuration tool:</div>
               <div class="cs-action-block">
                 msconfig
-                <span class="cs-action-copy" onclick="copyCommand('msconfig')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('msconfig'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1713,30 +1906,30 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟢</span>Component Store Corruption</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x800F0988')">0x800F0988</div>
-              <div class="cs-code-tag" onclick="copyCommand('0x80073701')">0x80073701</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x800F0988'); return false;">0x800F0988</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80073701'); return false;">0x80073701</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Reset the Windows Update catalog files, clear the distribution cache, and restart services via CMD:</div>
               <div class="cs-action-block">
                 net stop wuauserv
-                <span class="cs-action-copy" onclick="copyCommand('net stop wuauserv')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('net stop wuauserv'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 net stop cryptSvc
-                <span class="cs-action-copy" onclick="copyCommand('net stop cryptSvc')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('net stop cryptSvc'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 net stop bits
-                <span class="cs-action-copy" onclick="copyCommand('net stop bits')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('net stop bits'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 ren C:\Windows\SoftwareDistribution SoftwareDistribution.old
-                <span class="cs-action-copy" onclick="copyCommand('ren C:\\Windows\\SoftwareDistribution SoftwareDistribution.old')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('ren C:\\Windows\\SoftwareDistribution SoftwareDistribution.old'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 net start wuauserv
-                <span class="cs-action-copy" onclick="copyCommand('net start wuauserv')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('net start wuauserv'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1750,18 +1943,18 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟢</span>Migration / Driver Conflict</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0xC1900101')">0xC1900101</div>
+              <div class="cs-code-tag" onclick="copyCommand('0xC1900101'); return false;">0xC1900101</div>
               <div style="font-size: 0.75rem; color: #8b949e; margin-top: 0.5rem;">Installation failed in safe_os phase</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Disconnect unnecessary external hardware. Run the Windows servicing health check to repair the system image:</div>
               <div class="cs-action-block">
                 DISM.exe /Online /Cleanup-Image /AnalyzeComponentStore
-                <span class="cs-action-copy" onclick="copyCommand('DISM.exe /Online /Cleanup-Image /AnalyzeComponentStore')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('DISM.exe /Online /Cleanup-Image /AnalyzeComponentStore'); return false;">copy</span>
               </div>
               <div class="cs-action-block" style="margin-top: 0.5rem;">
                 DISM.exe /Online /Cleanup-Image /StartComponentCleanup
-                <span class="cs-action-copy" onclick="copyCommand('DISM.exe /Online /Cleanup-Image /StartComponentCleanup')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('DISM.exe /Online /Cleanup-Image /StartComponentCleanup'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1775,14 +1968,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟢</span>Insufficient Disk Space</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x80070070')">0x80070070</div>
-              <div class="cs-code-tag" onclick="copyCommand('ERROR_DISK_FULL')">ERROR_DISK_FULL</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80070070'); return false;">0x80070070</div>
+              <div class="cs-code-tag" onclick="copyCommand('ERROR_DISK_FULL'); return false;">ERROR_DISK_FULL</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Launch the Windows Storage sense utility or run the built-in system file cleanup tool to purge delivery optimization files:</div>
               <div class="cs-action-block">
                 cleanmgr /sageset:1
-                <span class="cs-action-copy" onclick="copyCommand('cleanmgr /sageset:1')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('cleanmgr /sageset:1'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1796,14 +1989,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟢</span>Group Policy Block</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x80244007')">0x80244007</div>
-              <div class="cs-code-tag" onclick="copyCommand('SOAP_client_failed')">SOAP client failed</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80244007'); return false;">0x80244007</div>
+              <div class="cs-code-tag" onclick="copyCommand('SOAP_client_failed'); return false;">SOAP client failed</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Force a local update of corporate Group Policy objects and verify domain controller connectivity via CMD:</div>
               <div class="cs-action-block">
                 gpupdate /force
-                <span class="cs-action-copy" onclick="copyCommand('gpupdate /force')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('gpupdate /force'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1817,14 +2010,14 @@ exit</pre>
               <div class="cs-error-name"><span class="cs-error-icon">🟢</span>Service Registration Missing</div>
             </td>
             <td data-label="Common Codes">
-              <div class="cs-code-tag" onclick="copyCommand('0x80240438')">0x80240438</div>
-              <div class="cs-code-tag" onclick="copyCommand('Update_service_connectivity')">Update service connectivity</div>
+              <div class="cs-code-tag" onclick="copyCommand('0x80240438'); return false;">0x80240438</div>
+              <div class="cs-code-tag" onclick="copyCommand('Update_service_connectivity'); return false;">Update service connectivity</div>
             </td>
             <td data-label="Quick Triage Action">
               <div>Run the built-in automated maintenance diagnostic engine package via command line utility:</div>
               <div class="cs-action-block">
                 msdt.exe /id WindowsUpdateDiagnostic
-                <span class="cs-action-copy" onclick="copyCommand('msdt.exe /id WindowsUpdateDiagnostic')">copy</span>
+                <span class="cs-action-copy" onclick="copyCommand('msdt.exe /id WindowsUpdateDiagnostic'); return false;">copy</span>
               </div>
             </td>
             <td data-label="Escalation Rule" class="cs-escalation">
@@ -1847,10 +2040,10 @@ exit</pre>
 
       <div class="cs-device-toggle">
         <label>Tier:</label>
-        <button class="cs-tier-btn active" onclick="switchEventLogTier('tier1')">🔴 Tier 1: Critical</button>
-        <button class="cs-tier-btn" onclick="switchEventLogTier('tier2')">🟡 Tier 2: Device &amp; Drivers</button>
-        <button class="cs-tier-btn" onclick="switchEventLogTier('tier3')">🔵 Tier 3: Apps &amp; Runtime</button>
-        <button class="cs-tier-btn" onclick="switchEventLogTier('tier4')">🟢 Tier 4: Updates &amp; Maintenance</button>
+        <button class="cs-tier-btn active" onclick="switchEventLogTier('tier1'); return false;">🔴 Tier 1: Critical</button>
+        <button class="cs-tier-btn" onclick="switchEventLogTier('tier2'); return false;">🟡 Tier 2: Device &amp; Drivers</button>
+        <button class="cs-tier-btn" onclick="switchEventLogTier('tier3'); return false;">🔵 Tier 3: Apps &amp; Runtime</button>
+        <button class="cs-tier-btn" onclick="switchEventLogTier('tier4'); return false;">🟢 Tier 4: Updates &amp; Maintenance</button>
       </div>
 
       <!-- Event Log Tier 1 -->
@@ -1927,10 +2120,10 @@ exit</pre>
 
       <div class="cs-device-toggle">
         <label>Tier:</label>
-        <button class="cs-tier-btn active" onclick="switchPowerShellTier('tier1')">🔴 Tier 1: Critical</button>
-        <button class="cs-tier-btn" onclick="switchPowerShellTier('tier2')">🟡 Tier 2: Device &amp; Drivers</button>
-        <button class="cs-tier-btn" onclick="switchPowerShellTier('tier3')">🔵 Tier 3: Apps &amp; Runtime</button>
-        <button class="cs-tier-btn" onclick="switchPowerShellTier('tier4')">🟢 Tier 4: Updates &amp; Maintenance</button>
+        <button class="cs-tier-btn active" onclick="switchPowerShellTier('tier1'); return false;">🔴 Tier 1: Critical</button>
+        <button class="cs-tier-btn" onclick="switchPowerShellTier('tier2'); return false;">🟡 Tier 2: Device &amp; Drivers</button>
+        <button class="cs-tier-btn" onclick="switchPowerShellTier('tier3'); return false;">🔵 Tier 3: Apps &amp; Runtime</button>
+        <button class="cs-tier-btn" onclick="switchPowerShellTier('tier4'); return false;">🟢 Tier 4: Updates &amp; Maintenance</button>
       </div>
 
       <!-- PowerShell Tier 1 -->
@@ -1938,14 +2131,14 @@ exit</pre>
         <div class="cs-ps-snippet cs-severity-critical">
           <div class="cs-ps-name">Get BSOD Bugcheck History</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Get-CimInstance -ClassName Win32_NTLogEvent -Filter "Logfile='System' AND EventCode=1001" | Select-Object TimeGenerated, Message | Format-List</pre>
           </div>
         </div>
         <div class="cs-ps-snippet cs-severity-critical">
           <div class="cs-ps-name">Check SMART Status of Storage Drives</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Get-PhysicalDisk | Select-Object DeviceId, FriendlyName, OperationalStatus, HealthStatus</pre>
           </div>
         </div>
@@ -1956,14 +2149,14 @@ exit</pre>
         <div class="cs-ps-snippet cs-severity-high">
           <div class="cs-ps-name">List All Failing/Flagged Devices (Device Manager Errors)</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Get-CimInstance -ClassName Win32_PnPEntity | Where-Object {$_.ConfigManagerUserConfig -ne 0} | Select-Object Name, Status, DeviceID</pre>
           </div>
         </div>
         <div class="cs-ps-snippet cs-severity-high">
           <div class="cs-ps-name">Backup All Third-Party System Drivers</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Export-WindowsDriver -Online -Destination "C:\DriverBackup"</pre>
           </div>
         </div>
@@ -1974,14 +2167,14 @@ exit</pre>
         <div class="cs-ps-snippet cs-severity-medium">
           <div class="cs-ps-name">Find Top 5 Processes Consuming Most Memory (RAM)</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5 Name, Id, @{Name='RAM(MB)';Expression={[math]::Round($_.WorkingSet / 1MB, 2)}}</pre>
           </div>
         </div>
         <div class="cs-ps-snippet cs-severity-medium">
           <div class="cs-ps-name">Force Terminate a Hanging App/Process Instantly</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Stop-Process -Name "ProcessName" -Force</pre>
           </div>
         </div>
@@ -1992,14 +2185,14 @@ exit</pre>
         <div class="cs-ps-snippet cs-severity-low">
           <div class="cs-ps-name">Force Run Windows Update Detection and Download Cycle</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>(New-Object -ComObject Microsoft.Update.AutoUpdate).DetectNow()</pre>
           </div>
         </div>
         <div class="cs-ps-snippet cs-severity-low">
           <div class="cs-ps-name">Check the Health Status of Component Store (DISM)</div>
           <div class="cs-code-block" style="margin: 1rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Repair-WindowsImage -Online -CheckHealth</pre>
           </div>
         </div>
@@ -2018,10 +2211,10 @@ exit</pre>
 
       <div class="cs-device-toggle">
         <label>Tier:</label>
-        <button class="cs-tier-btn active" onclick="switchADTier('tier1')">🔴 Tier 1: Critical</button>
-        <button class="cs-tier-btn" onclick="switchADTier('tier2')">🟡 Tier 2: Computer Objects</button>
-        <button class="cs-tier-btn" onclick="switchADTier('tier3')">🔵 Tier 3: User &amp; Permissions</button>
-        <button class="cs-tier-btn" onclick="switchADTier('tier4')">🟢 Tier 4: Group Policy</button>
+        <button class="cs-tier-btn active" onclick="switchADTier('tier1'); return false;">🔴 Tier 1: Critical</button>
+        <button class="cs-tier-btn" onclick="switchADTier('tier2'); return false;">🟡 Tier 2: Computer Objects</button>
+        <button class="cs-tier-btn" onclick="switchADTier('tier3'); return false;">🔵 Tier 3: User &amp; Permissions</button>
+        <button class="cs-tier-btn" onclick="switchADTier('tier4'); return false;">🟢 Tier 4: Group Policy</button>
       </div>
 
       <!-- AD Tier 1 -->
@@ -2032,7 +2225,7 @@ exit</pre>
           <div class="cs-ad-error"><strong>Common Error / Event ID:</strong> Event ID 4625 (Failed logon), "The trust relationship between this workstation and the primary domain failed."</div>
           <div class="cs-ad-action"><strong>Quick Triage Action:</strong></div>
           <div class="cs-code-block" style="margin: 0.75rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Reset-ComputerMachinePassword</pre>
           </div>
           <div class="cs-ad-escalation"><strong>Escalation Rule:</strong> If resetting machine password fails or user remains locked out due to infinite bad-password loop, escalate to IAM / Identity Team.</div>
@@ -2047,7 +2240,7 @@ exit</pre>
           <div class="cs-ad-error"><strong>Common Error / Event ID:</strong> 0x80072030 (Server not willing to process request), Object Not Found.</div>
           <div class="cs-ad-action"><strong>Quick Triage Action:</strong></div>
           <div class="cs-code-block" style="margin: 0.75rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Get-ADComputer -Identity "WorkstationName" -Server "yourdomain.local"</pre>
           </div>
           <div class="cs-ad-escalation"><strong>Escalation Rule:</strong> If computer object exists but is corrupted or disabled, escalate to Desktop Deployment Team to clear conflicting stale records.</div>
@@ -2062,7 +2255,7 @@ exit</pre>
           <div class="cs-ad-error"><strong>Common Error / Event ID:</strong> Event ID 4728 (Member added to security group), Access Denied on shared network drives.</div>
           <div class="cs-ad-action"><strong>Quick Triage Action:</strong></div>
           <div class="cs-code-block" style="margin: 0.75rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Get-ADPrincipalGroupMembership -Identity "Username" | Select-Object Name</pre>
           </div>
           <div class="cs-ad-escalation"><strong>Escalation Rule:</strong> If user belongs to correct group but permissions still denied, escalate to File Server / Storage Administration.</div>
@@ -2077,7 +2270,7 @@ exit</pre>
           <div class="cs-ad-error"><strong>Common Error / Event ID:</strong> Event ID 1058 (Cannot access gpt.ini), 0x80070035 (Network path not found).</div>
           <div class="cs-ad-action"><strong>Quick Triage Action:</strong></div>
           <div class="cs-code-block" style="margin: 0.75rem 0;">
-            <button class="cs-copy-btn" onclick="copyBlock(this)">copy</button>
+            <button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button>
             <pre>Get-WinEvent -LogName "Microsoft-Windows-GroupPolicy/Operational" | Where-Object {$_.LevelDisplayName -eq "Error"} | Select-Object -First 5 TimeCreated, Message</pre>
           </div>
           <div class="cs-ad-escalation"><strong>Escalation Rule:</strong> If multiple machines fail to pull policies and show SYSVOL errors, escalate immediately to Active Directory Domain Admins (Replication Failure).</div>
@@ -2097,25 +2290,25 @@ exit</pre>
 
       <div class="cs-device-toggle">
         <label>Tier:</label>
-        <button class="cs-tier-btn active" onclick="switchLinuxNetworkTier('tier1')">🔴 Tier 1: Ports</button>
-        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier2')">🟡 Tier 2: Internet/DNS</button>
-        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier3')">🔵 Tier 3: Package Management</button>
-        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier4')">🟢 Tier 4: Logs</button>
+        <button class="cs-tier-btn active" onclick="switchLinuxNetworkTier('tier1'); return false;">🔴 Tier 1: Ports</button>
+        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier2'); return false;">🟡 Tier 2: Internet/DNS</button>
+        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier3'); return false;">🔵 Tier 3: Package Management</button>
+        <button class="cs-tier-btn" onclick="switchLinuxNetworkTier('tier4'); return false;">🟢 Tier 4: Logs</button>
       </div>
 
       <!-- Linux Network Tier 1: Ports -->
       <div id="linux-net-tier1" class="cs-linux-tier">
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Find Programs Listening on Ports</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -plnt</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netstat -plnt</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Find Programs Listening on Ports (ss)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ss -plnt</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ss -plnt</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Find Programs Listening on Specific Port</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>lsof -i -P | grep <span class="cs-placeholder">&lt;port&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>lsof -i -P | grep <span class="cs-placeholder">&lt;port&gt;</span></pre></div>
         </div>
       </div>
 
@@ -2123,59 +2316,59 @@ exit</pre>
       <div id="linux-net-tier2" class="cs-linux-tier" style="display: none;">
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Show Domain IP Address (dig)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig +short example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dig +short example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Show Domain IP Address (nslookup)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>nslookup example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Check DNS Using Specific Nameserver - Google (8.8.8.8)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig @8.8.8.8 example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dig @8.8.8.8 example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Check DNS Using Specific Nameserver - Cloudflare (1.1.1.1)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup example.com 1.1.1.1</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>nslookup example.com 1.1.1.1</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Find Host Provider</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>whois <span class="cs-placeholder">&lt;ip_address&gt;</span> | grep -i "orgname\|netname"</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>whois <span class="cs-placeholder">&lt;ip_address&gt;</span> | grep -i "orgname\|netname"</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Curl Headers with Redirect</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>curl --head --location "https://example.com"</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>curl --head --location "https://example.com"</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Test if Host is Reachable (ping)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ping example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Show Route Taken to Host (traceroute)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>traceroute example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>traceroute example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Show Route with Real-Time Updates (mtr)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>mtr example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>mtr example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">List Details of Network Interfaces</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ip address</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ip address</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Check Local DNS Settings (/etc/hosts)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/hosts</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>cat /etc/hosts</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Check Local DNS Settings (/etc/resolv.conf)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/resolv.conf</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>cat /etc/resolv.conf</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Check systemd Resolver Status</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>systemd-resolve --status</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>systemd-resolve --status</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Capture Traffic to/from Host</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo tcpdump host www.example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo tcpdump host www.example.com</pre></div>
         </div>
       </div>
 
@@ -2183,47 +2376,47 @@ exit</pre>
       <div id="linux-net-tier3" class="cs-linux-tier" style="display: none;">
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">List Packages (Debian/Ubuntu)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dpkg -l</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dpkg -l</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">List Installed Packages (apt)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt list --installed</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>apt list --installed</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Find Installed Package (dpkg)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dpkg -l | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dpkg -l | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Find Installed Package (apt)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt list --installed | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>apt list --installed | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Install Package (dpkg)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dpkg -i <span class="cs-placeholder">&lt;package_name&gt;</span>.deb</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dpkg -i <span class="cs-placeholder">&lt;package_name&gt;</span>.deb</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Install Package (apt-get)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt-get install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>apt-get install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Install Package (apt)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>apt install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>apt install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Install Package (CentOS/RedHat - yum)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>yum install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>yum install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Install Package (RHEL/CentOS 8+ - dnf)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dnf install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dnf install <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Install Package (rpm)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>rpm -ivh <span class="cs-placeholder">&lt;package_name&gt;</span>.rpm</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>rpm -ivh <span class="cs-placeholder">&lt;package_name&gt;</span>.rpm</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Find Installed Package (CentOS/RedHat)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>rpm -qa | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>rpm -qa | grep <span class="cs-placeholder">&lt;package&gt;</span></pre></div>
         </div>
       </div>
 
@@ -2231,7 +2424,7 @@ exit</pre>
       <div id="linux-net-tier4" class="cs-linux-tier" style="display: none;">
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Print Last Lines in Log File</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>tail -n <span class="cs-placeholder">&lt;n&gt;</span> /path/to/log/file</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>tail -n <span class="cs-placeholder">&lt;n&gt;</span> /path/to/log/file</pre></div>
         </div>
       </div>
 
@@ -2264,27 +2457,27 @@ exit</pre>
         <h3 class="cs-cat-title">🌐 IP Configuration</h3>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Display All IP Configuration Details</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /all</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig /all</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Release DHCP IP Address</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /release</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig /release</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Renew DHCP IP Address</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /renew</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig /renew</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Flush DNS Cache</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /flushdns</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig /flushdns</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Display DNS Cache</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /displaydns</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig /displaydns</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Complete IP Reset Workflow</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /release && ipconfig /renew && ipconfig /flushdns && ipconfig /displaydns</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig /release && ipconfig /renew && ipconfig /flushdns && ipconfig /displaydns</pre></div>
         </div>
       </div>
 
@@ -2293,19 +2486,19 @@ exit</pre>
         <h3 class="cs-cat-title">📡 Connectivity Testing</h3>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Test Host Reachability (ping)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ping <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Trace Route to Destination</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>tracert <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>tracert <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Test TCP Connection &amp; Port (PowerShell)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Test-NetConnection <span class="cs-placeholder">&lt;hostname&gt;</span> -Port <span class="cs-placeholder">&lt;port_number&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Test-NetConnection <span class="cs-placeholder">&lt;hostname&gt;</span> -Port <span class="cs-placeholder">&lt;port_number&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Trace Route (PowerShell)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Test-NetConnection <span class="cs-placeholder">&lt;hostname&gt;</span> -TraceRoute</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Test-NetConnection <span class="cs-placeholder">&lt;hostname&gt;</span> -TraceRoute</pre></div>
         </div>
       </div>
 
@@ -2314,27 +2507,27 @@ exit</pre>
         <h3 class="cs-cat-title">📊 Network Status</h3>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display All Active Connections &amp; Listening Ports</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -an</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netstat -an</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display Active Connections with Process IDs</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -ano</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netstat -ano</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">View ARP Cache (MAC &lt;→ IP Mappings)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>arp -a</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>arp -a</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display Routing Table</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>route print</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>route print</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display Computer Host Name</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>hostname</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>hostname</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display MAC Addresses</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>getmac</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>getmac</pre></div>
         </div>
       </div>
 
@@ -2343,23 +2536,23 @@ exit</pre>
         <h3 class="cs-cat-title">🔍 DNS Management</h3>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Flush DNS Cache (ipconfig)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig /flushdns</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig /flushdns</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">DNS Lookup (nslookup)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>nslookup <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">View Local DNS Cache (PowerShell)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-DnsClientCache</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Get-DnsClientCache</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Clear DNS Cache (PowerShell)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Clear-DnsClientCache</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Clear-DnsClientCache</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">View DNS Client Configuration (PowerShell)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-DnsClient</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Get-DnsClient</pre></div>
         </div>
       </div>
 
@@ -2368,23 +2561,23 @@ exit</pre>
         <h3 class="cs-cat-title">🔌 Network Adapters (PowerShell)</h3>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">List All Network Adapters</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-NetAdapter</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Get-NetAdapter</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Get Detailed IP Configuration</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-NetIPConfiguration</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Get-NetIPConfiguration</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">List All IP Addresses</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Get-NetIPAddress</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Get-NetIPAddress</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Disable Network Adapter</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Disable-NetAdapter -Name <span class="cs-placeholder">&lt;adapter_name&gt;</span> -Confirm:$false</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Disable-NetAdapter -Name <span class="cs-placeholder">&lt;adapter_name&gt;</span> -Confirm:$false</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Enable Network Adapter</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>Enable-NetAdapter -Name <span class="cs-placeholder">&lt;adapter_name&gt;</span> -Confirm:$false</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>Enable-NetAdapter -Name <span class="cs-placeholder">&lt;adapter_name&gt;</span> -Confirm:$false</pre></div>
         </div>
       </div>
 
@@ -2393,23 +2586,23 @@ exit</pre>
         <h3 class="cs-cat-title">🔥 Firewall &amp; Advanced (netsh)</h3>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Display All Firewall Profiles Status</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh advfirewall show allprofiles</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netsh advfirewall show allprofiles</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Reset TCP/IP Stack</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh int ip reset</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netsh int ip reset</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Reset Winsock (Windows Socket API)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh winsock reset</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netsh winsock reset</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">View Network Interface Statistics</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh int ip show config</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netsh int ip show config</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">List All Firewall Rules</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netsh advfirewall firewall show rule name=all</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netsh advfirewall firewall show rule name=all</pre></div>
         </div>
       </div>
 
@@ -2429,23 +2622,23 @@ exit</pre>
         <h3 class="cs-cat-title">🔌 Network Interfaces & Configuration</h3>
         <div class="cs-network-cmd cs-severity-critical">
           <div class="cs-network-name">Display All Network Interfaces</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ifconfig</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ifconfig</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-critical">
           <div class="cs-network-name">Display Specific Network Interface (e.g., Wi-Fi en0)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ifconfig <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ifconfig <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-critical">
           <div class="cs-network-name">Bring Interface Up</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> up</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> up</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-critical">
           <div class="cs-network-name">Bring Interface Down</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> down</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> down</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-critical">
           <div class="cs-network-name">List All Hardware Network Ports</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -listallhardwareports</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>networksetup -listallhardwareports</pre></div>
         </div>
       </div>
 
@@ -2454,23 +2647,23 @@ exit</pre>
         <h3 class="cs-cat-title">🌐 IP Configuration &amp; DHCP</h3>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Get IP Address for Interface</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig getifaddr <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig getifaddr <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Get DHCP Configuration</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ipconfig getpacket <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ipconfig getpacket <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Renew DHCP Lease</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ipconfig set <span class="cs-placeholder">&lt;en0&gt;</span> DHCP</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo ipconfig set <span class="cs-placeholder">&lt;en0&gt;</span> DHCP</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Release DHCP Lease</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ipconfig set <span class="cs-placeholder">&lt;en0&gt;</span> NONE</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo ipconfig set <span class="cs-placeholder">&lt;en0&gt;</span> NONE</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-high">
           <div class="cs-network-name">Set Static IP Address (Temporary)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> 192.168.1.100 netmask 255.255.255.0</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo ifconfig <span class="cs-placeholder">&lt;en0&gt;</span> 192.168.1.100 netmask 255.255.255.0</pre></div>
         </div>
       </div>
 
@@ -2479,19 +2672,19 @@ exit</pre>
         <h3 class="cs-cat-title">📡 Connectivity Testing</h3>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Test Host Reachability (ping)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ping <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Trace Route to Destination</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>traceroute <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>traceroute <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Trace Route with Real-Time Updates (MTR)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>mtr <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>mtr <span class="cs-placeholder">&lt;hostname_or_ip&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Network Quality Test (macOS 12.1+)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networkQuality</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>networkQuality</pre></div>
         </div>
       </div>
 
@@ -2500,23 +2693,23 @@ exit</pre>
         <h3 class="cs-cat-title">📊 Network Status &amp; Services</h3>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display All Active Connections</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -an</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netstat -an</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display Network Statistics</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -di -I <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netstat -di -I <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">List All Network Services</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -listallnetworkservices</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>networksetup -listallnetworkservices</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">View ARP Cache (MAC ↔ IP Mappings)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>arp -a</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>arp -a</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Display Routing Table</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -rn</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netstat -rn</pre></div>
         </div>
       </div>
 
@@ -2525,19 +2718,19 @@ exit</pre>
         <h3 class="cs-cat-title">🔍 DNS Management</h3>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">View DNS Configuration</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>scutil --dns</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>scutil --dns</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">Flush DNS Cache</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo dscacheutil -flushcache</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo dscacheutil -flushcache</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">DNS Lookup (dig)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dig <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-medium">
           <div class="cs-network-name">DNS Lookup (nslookup)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>nslookup <span class="cs-placeholder">&lt;domain.com&gt;</span></pre></div>
         </div>
       </div>
 
@@ -2546,23 +2739,23 @@ exit</pre>
         <h3 class="cs-cat-title">📶 Wi-Fi Management</h3>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Get Current Wi-Fi Network Name (SSID)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -getairportnetwork <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>networksetup -getairportnetwork <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Get Wi-Fi Power Status</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>networksetup -getairportpower <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>networksetup -getairportpower <span class="cs-placeholder">&lt;en0&gt;</span></pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Turn Wi-Fi On</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo networksetup -setairportpower <span class="cs-placeholder">&lt;en0&gt;</span> on</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo networksetup -setairportpower <span class="cs-placeholder">&lt;en0&gt;</span> on</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Turn Wi-Fi Off</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo networksetup -setairportpower <span class="cs-placeholder">&lt;en0&gt;</span> off</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo networksetup -setairportpower <span class="cs-placeholder">&lt;en0&gt;</span> off</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Connect to Wi-Fi Network</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo networksetup -setairportnetwork <span class="cs-placeholder">&lt;en0&gt;</span> "<span class="cs-placeholder">&lt;NetworkName&gt;</span>" "<span class="cs-placeholder">&lt;password&gt;</span>"</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo networksetup -setairportnetwork <span class="cs-placeholder">&lt;en0&gt;</span> "<span class="cs-placeholder">&lt;NetworkName&gt;</span>" "<span class="cs-placeholder">&lt;password&gt;</span>"</pre></div>
         </div>
       </div>
 
@@ -2571,19 +2764,19 @@ exit</pre>
         <h3 class="cs-cat-title">🖥️ System Information</h3>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Display Computer Hostname</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>hostname</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>hostname</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Get Computer Name</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>scutil --get ComputerName</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>scutil --get ComputerName</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Set Computer Name</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo scutil --set ComputerName "<span class="cs-placeholder">&lt;NewName&gt;</span>"</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo scutil --set ComputerName "<span class="cs-placeholder">&lt;NewName&gt;</span>"</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Display macOS Version</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sw_vers</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sw_vers</pre></div>
         </div>
       </div>
 
@@ -2592,19 +2785,19 @@ exit</pre>
         <h3 class="cs-cat-title">🔥 Firewall &amp; Security</h3>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Check Firewall Status</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>defaults read /Library/Preferences/com.apple.alf globalstate</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>defaults read /Library/Preferences/com.apple.alf globalstate</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Enable Firewall</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Disable Firewall</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 0</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 0</pre></div>
         </div>
         <div class="cs-network-cmd cs-severity-low">
           <div class="cs-network-name">Reload Firewall Settings</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo launchctl load /Library/LaunchDaemons/com.apple.alf.agent.plist</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo launchctl load /Library/LaunchDaemons/com.apple.alf.agent.plist</pre></div>
         </div>
       </div>
 
@@ -2621,37 +2814,37 @@ exit</pre>
 
       <div class="cs-device-toggle">
         <label>Tier:</label>
-        <button class="cs-tier-btn active" onclick="switchLinuxTier('tier1')">🔴 Tier 1: Critical System Health</button>
-        <button class="cs-tier-btn" onclick="switchLinuxTier('tier2')">🟡 Tier 2: Hardware &amp; Resources</button>
-        <button class="cs-tier-btn" onclick="switchLinuxTier('tier3')">🔵 Tier 3: Network &amp; Connectivity</button>
-        <button class="cs-tier-btn" onclick="switchLinuxTier('tier4')">🟢 Tier 4: Processes &amp; Services</button>
+        <button class="cs-tier-btn active" onclick="switchLinuxTier('tier1'); return false;">🔴 Tier 1: Critical System Health</button>
+        <button class="cs-tier-btn" onclick="switchLinuxTier('tier2'); return false;">🟡 Tier 2: Hardware &amp; Resources</button>
+        <button class="cs-tier-btn" onclick="switchLinuxTier('tier3'); return false;">🔵 Tier 3: Network &amp; Connectivity</button>
+        <button class="cs-tier-btn" onclick="switchLinuxTier('tier4'); return false;">🟢 Tier 4: Processes &amp; Services</button>
       </div>
 
       <!-- Linux Tier 1 -->
       <div id="linux-tier1" class="cs-linux-tier">
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Check System Uptime &amp; Logged-in Users</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>uptime && who</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>uptime && who</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">View Recent System Events</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>last -x | head</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>last -x | head</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Quick Kernel &amp; Hardware Overview</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ip a ; df -h</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ip a ; df -h</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Read Recent Boot &amp; Hardware Errors (dmesg)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dmesg -T | grep -iE 'error|fail'</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dmesg -T | grep -iE 'error|fail'</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Follow Kernel Messages in Real-Time</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dmesg -w</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dmesg -w</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-critical">
           <div class="cs-linux-name">Inspect systemd Journal for Service Start Failures</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>journalctl -xe</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>journalctl -xe</pre></div>
         </div>
       </div>
 
@@ -2659,31 +2852,31 @@ exit</pre>
       <div id="linux-tier2" class="cs-linux-tier" style="display: none;">
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Real-Time Interactive Resource Dashboard</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>htop</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>htop</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Check System Memory Pressure &amp; Swap</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>free -m -h</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>free -m -h</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">View Detailed System &amp; Process Metrics (wait times)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>vmstat 2</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>vmstat 2</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Check Filesystem Mount Points &amp; Disk Space</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>df -h</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>df -h</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">Find Large Folders Consuming Most Space</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>du -sh /* | sort -h</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>du -sh /* | sort -h</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">List All Block Devices &amp; Mount Points</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>lsblk -f</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>lsblk -f</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-high">
           <div class="cs-linux-name">View Physical Disk Health (SMART) Data</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo smartctl -a /dev/sda</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo smartctl -a /dev/sda</pre></div>
         </div>
       </div>
 
@@ -2691,67 +2884,67 @@ exit</pre>
       <div id="linux-tier3" class="cs-linux-tier" style="display: none;">
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Display All Configured Interfaces &amp; IP Addresses</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ip -br a</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ip -br a</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Find Programs Listening on Ports (netstat)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>netstat -plnt</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>netstat -plnt</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Find Programs Listening on Ports (ss)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ss -plnt</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ss -plnt</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Check Specific Port Usage (lsof)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>lsof -i -P | grep <span class="cs-placeholder">&lt;port&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>lsof -i -P | grep <span class="cs-placeholder">&lt;port&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Show Domain IP Address (dig)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig +short example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dig +short example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Show Domain IP Address (nslookup)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>nslookup example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>nslookup example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Check DNS Using Specific Nameserver</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>dig @8.8.8.8 example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>dig @8.8.8.8 example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Find Host Provider (whois)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>whois <span class="cs-placeholder">&lt;ip_address&gt;</span> | grep -i "orgname\|netname"</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>whois <span class="cs-placeholder">&lt;ip_address&gt;</span> | grep -i "orgname\|netname"</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Curl Headers with Redirect</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>curl --head --location "https://example.com"</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>curl --head --location "https://example.com"</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Test if Host is Reachable (ping)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ping example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ping example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Show Route Taken to Host (traceroute)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>traceroute example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>traceroute example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Show Route with Real-Time Updates (mtr)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>mtr example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>mtr example.com</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Check Local DNS Settings (/etc/hosts)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/hosts</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>cat /etc/hosts</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Check Local DNS Settings (/etc/resolv.conf)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>cat /etc/resolv.conf</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>cat /etc/resolv.conf</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Check systemd Resolver Status</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>systemd-resolve --status</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>systemd-resolve --status</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-medium">
           <div class="cs-linux-name">Capture Network Traffic to/from Host</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo tcpdump host www.example.com</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo tcpdump host www.example.com</pre></div>
         </div>
       </div>
 
@@ -2759,35 +2952,35 @@ exit</pre>
       <div id="linux-tier4" class="cs-linux-tier" style="display: none;">
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Identify Exact Process ID (PID) of Runaway Process</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>ps aux | grep <span class="cs-placeholder">&lt;process_name&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>ps aux | grep <span class="cs-placeholder">&lt;process_name&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Gracefully Kill a Problematic Process</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>kill <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>kill <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Force Kill a Stubborn Process</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>kill -9 <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>kill -9 <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Stream Real-Time Logs for Specific Service</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>journalctl -u <span class="cs-placeholder">&lt;service_name&gt;</span> -f</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>journalctl -u <span class="cs-placeholder">&lt;service_name&gt;</span> -f</pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">See Files &amp; Ports Opened by Process</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>sudo lsof -p <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>sudo lsof -p <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Trace System Calls (Debug Hanging/Crashing Apps)</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>strace -p <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>strace -p <span class="cs-placeholder">&lt;PID&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Advanced strace with Timestamps &amp; Details</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>strace -tt -T -f -y -yy -s 1024 -p <span class="cs-placeholder">&lt;pid&gt;</span></pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>strace -tt -T -f -y -yy -s 1024 -p <span class="cs-placeholder">&lt;pid&gt;</span></pre></div>
         </div>
         <div class="cs-linux-cmd cs-severity-low">
           <div class="cs-linux-name">Print Last Lines in Log File</div>
-          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this)">copy</button><pre>tail -n <span class="cs-placeholder">&lt;n&gt;</span> /path/to/log/file</pre></div>
+          <div class="cs-code-block"><button class="cs-copy-btn" onclick="copyBlock(this); return false;">copy</button><pre>tail -n <span class="cs-placeholder">&lt;n&gt;</span> /path/to/log/file</pre></div>
         </div>
       </div>
 
@@ -2854,59 +3047,35 @@ exit</pre>
     el.nextElementSibling.classList.toggle('open');
   }
 
-  // ── Switch Content (Cisco vs Windows vs Event Logs vs PowerShell vs Active Directory vs Linux) ──
+  // ── Switch Content ──
   function switchContent(category, tier) {
-    const overviewContent = document.getElementById('overview-content');
-    const ciscoContent = document.getElementById('cisco-content');
-    const windowsContent = document.getElementById('windows-content');
-    const eventLogsContent = document.getElementById('event-logs-content');
-    const powershellContent = document.getElementById('powershell-content');
-    const activeDirectoryContent = document.getElementById('active-directory-content');
-    const linuxContent = document.getElementById('linux-content');
-    const linuxNetworkContent = document.getElementById('linux-network-content');
-    const windowsNetworkContent = document.getElementById('windows-network-content');
-    const macosNetworkContent = document.getElementById('macos-network-content');
+    const sections = {
+      'overview':          document.getElementById('overview-content'),
+      'cisco':             document.getElementById('cisco-content'),
+      'windows':           document.getElementById('windows-content'),
+      'event-logs':        document.getElementById('event-logs-content'),
+      'powershell':        document.getElementById('powershell-content'),
+      'active-directory':  document.getElementById('active-directory-content'),
+      'linux':             document.getElementById('linux-content'),
+      'linux-network':     document.getElementById('linux-network-content'),
+      'windows-network':   document.getElementById('windows-network-content'),
+      'macos-network':     document.getElementById('macos-network-content')
+    };
 
-    // Hide all
-    overviewContent.classList.add('cs-hidden');
-    ciscoContent.classList.add('cs-hidden');
-    windowsContent.classList.add('cs-hidden');
-    eventLogsContent.classList.add('cs-hidden');
-    powershellContent.classList.add('cs-hidden');
-    activeDirectoryContent.classList.add('cs-hidden');
-    linuxContent.classList.add('cs-hidden');
-    linuxNetworkContent.classList.add('cs-hidden');
-    windowsNetworkContent.classList.add('cs-hidden');
-    macosNetworkContent.classList.add('cs-hidden');
+    // Hide all (null-safe — skips any section whose ID doesn't exist yet)
+    Object.values(sections).forEach(el => { if (el) el.classList.add('cs-hidden'); });
 
-    // Show selected
-    if (category === 'overview') {
-      overviewContent.classList.remove('cs-hidden');
-    } else if (category === 'cisco') {
-      ciscoContent.classList.remove('cs-hidden');
-    } else if (category === 'windows') {
-      windowsContent.classList.remove('cs-hidden');
-      if (tier) switchWindowsTier(tier);
-    } else if (category === 'event-logs') {
-      eventLogsContent.classList.remove('cs-hidden');
-      switchEventLogTier('tier1');
-    } else if (category === 'powershell') {
-      powershellContent.classList.remove('cs-hidden');
-      switchPowerShellTier('tier1');
-    } else if (category === 'active-directory') {
-      activeDirectoryContent.classList.remove('cs-hidden');
-      switchADTier('tier1');
-    } else if (category === 'linux') {
-      linuxContent.classList.remove('cs-hidden');
-      switchLinuxTier('tier1');
-    } else if (category === 'linux-network') {
-      linuxNetworkContent.classList.remove('cs-hidden');
-      switchLinuxNetworkTier('tier1');
-    } else if (category === 'windows-network') {
-      windowsNetworkContent.classList.remove('cs-hidden');
-    } else if (category === 'macos-network') {
-      macosNetworkContent.classList.remove('cs-hidden');
-    }
+    // Show selected and trigger tier switcher if needed
+    const target = sections[category];
+    if (!target) return;
+    target.classList.remove('cs-hidden');
+
+    if (category === 'windows')          { if (tier) switchWindowsTier(tier); }
+    else if (category === 'event-logs')  { switchEventLogTier('tier1'); }
+    else if (category === 'powershell')  { switchPowerShellTier('tier1'); }
+    else if (category === 'active-directory') { switchADTier('tier1'); }
+    else if (category === 'linux')       { switchLinuxTier('tier1'); }
+    else if (category === 'linux-network') { switchLinuxNetworkTier('tier1'); }
   }
 
   // ── Switch Event Log Tier ──
@@ -3065,7 +3234,7 @@ exit</pre>
     const tier2Table = document.getElementById('tier2-table');
     const tier3Table = document.getElementById('tier3-table');
     const tier4Table = document.getElementById('tier4-table');
-    const buttons = document.querySelectorAll('#windows-content .cs-tier-btn');
+    const buttons = document.querySelectorAll('.cs-tier-btn:not(.coming-soon)');
     
     // Hide all tables
     tier1Table.style.display = 'none';
@@ -3155,14 +3324,12 @@ exit</pre>
 
   // ── Copy Command (Windows) ──
   function copyCommand(text) {
-    const target = (window.event && window.event.target) || document.activeElement;
     navigator.clipboard.writeText(text).then(() => {
-      if (!target) return;
-      target.textContent = 'copied ✓';
-      target.classList.add('copied');
+      event.target.textContent = 'copied ✓';
+      event.target.classList.add('copied');
       setTimeout(() => {
-        target.textContent = 'copy';
-        target.classList.remove('copied');
+        event.target.textContent = 'copy';
+        event.target.classList.remove('copied');
       }, 2000);
     });
   }
